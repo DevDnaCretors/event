@@ -76,7 +76,6 @@
       -webkit-font-smoothing: antialiased;
       font-synthesis: none;
       overflow-x: hidden;
-      padding-top: 72px;
     }
 
     body::after {
@@ -104,14 +103,11 @@
     }
 
     .header {
-      position: fixed;
-      top: 0;
-      left: 0;
+      position: relative;
       width: 100%;
       padding: 12px 0;
       z-index: 20;
-      background: rgba(255, 255, 255, .88);
-      backdrop-filter: blur(16px);
+      background: var(--white);
       border-bottom: 1px solid transparent;
     }
 
