@@ -249,16 +249,6 @@
       min-height: 100vh;
     }
 
-    .eyebrow {
-      font-family: var(--font-main);
-      font-size: .82rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-      line-height: 1.3;
-      margin-bottom: 24px;
-    }
-
     .hero-title {
       font-family: var(--font-main);
       font-size: clamp(2.4rem, 5vw, 3.6rem);
@@ -296,72 +286,58 @@
     }
 
     .hero-grid > :first-child {
-      padding-top: 60px;
+      padding-top: 100px;
       padding-bottom: 48px;
     }
 
     .event-pass {
-      margin-top: 44px;
-      max-width: 420px;
-      display: grid;
-      grid-template-columns: 1fr 70px;
+      margin-top: 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 100%;
+      padding: 10px 16px 10px 12px;
       border: 1px solid var(--line);
-      border-radius: 16px;
-      overflow: hidden;
+      border-radius: 12px;
       background: var(--white);
-      box-shadow: 0 18px 50px rgba(7, 9, 13, .06);
+    }
+
+    .event-pass i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--red);
+      flex-shrink: 0;
+      animation: pulse 1.8s ease-in-out infinite;
     }
 
     .event-pass-body {
-      padding: 22px 24px;
-      position: relative;
-    }
-
-    .event-pass-body::after {
-      content: "";
-      position: absolute;
-      right: -7px;
-      top: 18px;
-      bottom: 18px;
-      border-right: 1.5px dashed var(--line);
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 6px 12px;
     }
 
     .event-pass-kicker {
-      font-size: .72rem;
+      font-size: .7rem;
       font-weight: 700;
       letter-spacing: .08em;
       text-transform: uppercase;
       color: var(--red);
-      margin-bottom: 8px;
     }
 
-    .event-pass h2 {
+    .event-pass strong {
       font-family: var(--font-display);
       font-style: italic;
       font-weight: 400;
-      font-size: 1.6rem;
+      font-size: 1.15rem;
       line-height: 1.1;
       letter-spacing: -0.5px;
     }
 
     .event-pass p {
-      margin-top: 8px;
       color: var(--gray-text);
-      font-size: .92rem;
-    }
-
-    .event-pass-stub {
-      background: var(--red);
-      color: var(--paper);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .16em;
-      text-transform: uppercase;
+      font-size: .85rem;
     }
 
     .hero-visual {
@@ -605,18 +581,14 @@
 
     .question-copy p {
       margin: 0;
-      padding: 24px;
+      padding: 22px 24px 24px;
       border-radius: 16px;
+      border-left: 4px solid var(--red);
       font-size: 1rem;
       font-weight: 400;
       line-height: 1.45;
       letter-spacing: -0.5px;
       color: var(--ink);
-      transition: transform .3s ease;
-    }
-
-    .question-copy p:hover {
-      transform: translateY(-4px);
     }
 
     .question-copy p:first-child {
@@ -625,16 +597,23 @@
 
     .question-copy p:last-child {
       background: var(--blue-soft);
+      border-left-color: var(--blue);
     }
 
     .question-copy strong {
       display: block;
-      margin-bottom: 10px;
-      font-size: .82rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-      color: var(--ink);
+      margin-bottom: 12px;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.35rem;
+      text-transform: none;
+      letter-spacing: -0.5px;
+      color: var(--red);
+    }
+
+    .question-copy p:last-child strong {
+      color: var(--blue);
     }
 
     .statement {
@@ -680,14 +659,15 @@
     }
 
     .about {
-      padding: clamp(40px, 8vw, 80px) 0 clamp(100px, 12vw, 180px);
+      padding: clamp(80px, 10vw, 140px) 0;
       background: var(--paper);
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 80px;
+      grid-template-columns: 1.05fr .95fr;
+      gap: clamp(40px, 6vw, 80px);
+      align-items: center;
     }
 
     .section-label {
@@ -699,27 +679,29 @@
       color: var(--red);
     }
 
-    .about-panel {
-      position: relative;
-      width: min(100%, 280px);
-      margin-top: 28px;
+    .about-copy .section-label {
+      margin-bottom: 16px;
     }
 
-    .about-panel img {
+    .about-visual {
+      position: relative;
+    }
+
+    .about-visual img {
       display: block;
       width: 100%;
       height: auto;
     }
 
-    .about-panel::after {
+    .about-visual::after {
       content: "";
       position: absolute;
       inset: 0;
       pointer-events: none;
       background: radial-gradient(
-        ellipse 72% 68% at 50% 48%,
-        transparent 42%,
-        var(--paper) 78%
+        ellipse 78% 74% at 50% 48%,
+        transparent 38%,
+        var(--paper) 82%
       );
     }
 
@@ -729,7 +711,7 @@
       font-weight: 400;
       font-size: clamp(2rem, 4vw, 2.4rem);
       letter-spacing: -1.5px;
-      line-height: 2.4rem;
+      line-height: 1.2;
       margin-bottom: 28px;
     }
 
@@ -744,14 +726,18 @@
     .capabilities {
       margin-top: 36px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+      flex-wrap: nowrap;
+      gap: 8px;
     }
 
     .capability {
-      padding: 12px 18px;
+      padding: 10px 14px;
       border-radius: 12px;
-      font-size: .9rem;
+      font-size: .85rem;
+      font-weight: 400;
+      letter-spacing: -0.5px;
+      text-transform: none;
+      white-space: nowrap;
       background: var(--blue-soft);
       color: var(--ink);
     }
@@ -1090,6 +1076,10 @@
         grid-template-columns: 1fr;
       }
 
+      .capabilities {
+        flex-wrap: wrap;
+      }
+
       .hero-title {
         font-size: 2.4rem;
         letter-spacing: -2px;
@@ -1138,6 +1128,7 @@
       .marquee-track,
       .float-dot,
       .event-chip i,
+      .event-pass i,
       .reveal {
         animation: none;
         transition: none;
@@ -1179,10 +1170,6 @@
     <div class="hero-grid">
 
       <div>
-        <div class="eyebrow">
-          DNA Field Notes / 001
-        </div>
-
         <h1 class="hero-title">
           Your technology is smarter than your marketing.
           <i>Let's change that.</i>
@@ -1201,12 +1188,12 @@
         </div>
 
         <div class="event-pass">
+          <i></i>
           <div class="event-pass-body">
-            <div class="event-pass-kicker">Live at the summit</div>
-            <h2>GSIC Summit</h2>
+            <span class="event-pass-kicker">Live at the summit</span>
+            <strong>GSIC Summit</strong>
             <p>Valencia / 7–8 October</p>
           </div>
-          <div class="event-pass-stub">Field Notes 001</div>
         </div>
       </div>
 
@@ -1382,19 +1369,10 @@
   <section class="about">
     <div class="container about-grid reveal">
 
-      <div>
-        <div class="section-label">
+      <div class="about-copy">
+        <p class="section-label">
           About DNA
-        </div>
-        <div class="about-panel">
-          <img
-            src="https://dnacreators.net/wp-content/uploads/dna-creators-who-we-are-poster-03.webp"
-            alt=""
-          />
-        </div>
-      </div>
-
-      <div>
+        </p>
         <h2>
           Your marketing allies, minus the corporate pretence.
         </h2>
@@ -1406,13 +1384,20 @@
         </p>
 
         <div class="capabilities">
-          <span class="capability">Strategy</span>
-          <span class="capability">Creativity</span>
-          <span class="capability">Media</span>
-          <span class="capability">Performance</span>
-          <span class="capability">Branding</span>
-          <span class="capability">Digital</span>
+          <span class="capability">#Strategy</span>
+          <span class="capability">#Creativity</span>
+          <span class="capability">#Media</span>
+          <span class="capability">#Performance</span>
+          <span class="capability">#Branding</span>
+          <span class="capability">#Digital</span>
         </div>
+      </div>
+
+      <div class="about-visual">
+        <img
+          src="https://dnacreators.net/wp-content/uploads/dna-creators-who-we-are-poster-03.webp"
+          alt=""
+        />
       </div>
 
     </div>
