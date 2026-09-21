@@ -16,12 +16,16 @@
   <style>
     @font-face {
       font-family: 'Chubbo variable';
+      font-style: normal;
+      font-weight: 100 900;
       font-display: swap;
       src: url('https://dnacreators.net/wp-content/uploads/Chubbo-Variable.ttf') format('truetype');
     }
 
     @font-face {
-      font-family: 'Chubbo Italic Variable';
+      font-family: 'Chubbo variable';
+      font-style: italic;
+      font-weight: 100 900;
       font-display: swap;
       src: url('https://dnacreators.net/wp-content/uploads/Chubbo-VariableItalic.ttf') format('truetype');
     }
@@ -46,7 +50,7 @@
       --max-width: 1440px;
       --page-space: clamp(16px, 5vw, 80px);
       --font-main: 'Sora', sans-serif;
-      --font-display: 'Chubbo Italic Variable', 'Chubbo variable', sans-serif;
+      --font-display: 'Chubbo variable', sans-serif;
       --font-display-regular: 'Chubbo variable', sans-serif;
     }
 
@@ -70,6 +74,7 @@
       line-height: 1.4rem;
       letter-spacing: -0.5px;
       -webkit-font-smoothing: antialiased;
+      font-synthesis: none;
       overflow-x: hidden;
     }
 
