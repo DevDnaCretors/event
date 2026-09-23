@@ -974,6 +974,16 @@
       margin-top: 28px;
     }
 
+    .form-status {
+      margin-top: 16px;
+      font-size: .95rem;
+      line-height: 1.4;
+    }
+
+    .form-status.is-error {
+      color: var(--pink);
+    }
+
     .contact-box .btn-primary {
       background: var(--paper);
       color: var(--red);
@@ -1425,7 +1435,7 @@
             Book a chat
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/company/dna-creators"
             class="btn"
             target="_blank"
             rel="noopener noreferrer"
@@ -1488,6 +1498,7 @@
               <button class="btn btn-primary" type="submit">
                 Send message
               </button>
+              <p class="form-status" hidden></p>
             </div>
           </form>
         </div>
@@ -1537,6 +1548,48 @@
   ) {
     console.log("QR visit detected");
   }
+
+  const form = document.querySelector(".contact-form");
+  const status = document.querySelector(".form-status");
+  const submit = form.querySelector("button[type='submit']");
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    status.hidden = true;
+    status.classList.remove("is-error");
+    submit.disabled = true;
+
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    if (window.location.protocol === "file:") {
+      status.textContent = "Something went wrong. Please try again.";
+      status.classList.add("is-error");
+      status.hidden = false;
+      submit.disabled = false;
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error();
+      }
+
+      form.reset();
+      status.textContent = "Thanks. We will get back to you.";
+    } catch {
+      status.textContent = "Something went wrong. Please try again.";
+      status.classList.add("is-error");
+    } finally {
+      status.hidden = false;
+      submit.disabled = false;
+    }
+  });
 </script>
 
 </body>
