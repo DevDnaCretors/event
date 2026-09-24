@@ -84,7 +84,7 @@
       inset: 0;
       pointer-events: none;
       z-index: 50;
-      opacity: .04;
+      opacity: .025;
       background-image: radial-gradient(var(--ink) .7px, transparent .7px);
       background-size: 22px 22px;
     }
@@ -105,10 +105,10 @@
     .header {
       position: relative;
       width: 100%;
-      padding: 12px 0;
+      padding: 18px 0;
       z-index: 20;
       background: var(--white);
-      border-bottom: 1px solid transparent;
+      border-bottom: 1px solid rgba(7, 9, 13, .06);
     }
 
     .header-inner {
@@ -116,12 +116,38 @@
       justify-content: space-between;
       align-items: center;
       gap: 30px;
+      flex-wrap: wrap;
     }
 
     .header-meta {
       display: flex;
       align-items: center;
       gap: 18px;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .lang-switch button {
+      border: 0;
+      background: transparent;
+      padding: 8px 12px;
+      font-family: var(--font-main);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      color: var(--gray-text);
+      cursor: pointer;
+    }
+
+    .lang-switch button.is-active {
+      background: var(--ink);
+      color: var(--paper);
     }
 
     .event-chip {
@@ -132,11 +158,13 @@
       border: 1px solid var(--line);
       border-radius: 999px;
       background: var(--white);
-      font-size: .78rem;
-      font-weight: 700;
-      letter-spacing: .04em;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .08em;
       text-transform: uppercase;
       color: var(--gray-text-dark);
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .event-chip i {
@@ -197,6 +225,28 @@
       overflow: hidden;
     }
 
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      align-items: start;
+      width: min(
+        calc(100% - (var(--page-space) * 2)),
+        var(--max-width)
+      );
+      margin-inline: auto;
+      padding-left: 0;
+      padding-right: 0;
+      min-height: 100vh;
+    }
+
+    .hero-grid > :first-child {
+      padding-top: 140px;
+      padding-bottom: 48px;
+    }
+
     .hero::before {
       content: "";
       position: absolute;
@@ -237,20 +287,6 @@
       50% { transform: translateY(-18px); }
     }
 
-    .hero-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      align-items: start;
-      width: min(100%, var(--max-width));
-      margin-inline: auto;
-      padding-left: 1em;
-      padding-right: 0;
-      min-height: 100vh;
-    }
-
     .hero-title {
       font-family: var(--font-main);
       font-size: clamp(2.4rem, 5vw, 3.6rem);
@@ -269,11 +305,11 @@
 
     .hero-intro {
       margin-top: 28px;
-      max-width: 580px;
-      font-size: 1rem;
+      max-width: 34em;
+      font-size: 1.05rem;
       font-weight: 400;
-      line-height: 1.4rem;
-      letter-spacing: -0.5px;
+      line-height: 1.55;
+      letter-spacing: -0.3px;
     }
 
     .hero-intro strong {
@@ -287,11 +323,6 @@
       gap: 12px;
     }
 
-    .hero-grid > :first-child {
-      padding-top: 140px;
-      padding-bottom: 48px;
-    }
-
     .event-pass {
       margin-top: 28px;
       display: inline-flex;
@@ -300,8 +331,9 @@
       max-width: 100%;
       padding: 10px 16px 10px 12px;
       border: 1px solid var(--line);
-      border-radius: 12px;
+      border-radius: 14px;
       background: var(--white);
+      box-shadow: 0 10px 28px rgba(7, 9, 13, .04);
     }
 
     .event-pass i {
@@ -363,7 +395,7 @@
       background-repeat: no-repeat;
       background-size: 22%;
       color: var(--paper);
-      padding: 88px 0 0;
+      padding: 72px 0 0;
       overflow: hidden;
     }
 
@@ -425,7 +457,7 @@
       font-family: var(--font-display);
       font-style: italic;
       font-weight: 400;
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-size: clamp(1.85rem, 2.6vw, 2.5rem);
       line-height: 1.1;
       letter-spacing: -0.5px;
     }
@@ -438,7 +470,7 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      border-top: 1px dashed rgba(250, 250, 250, .32);
+      border-top: 1px solid rgba(250, 250, 250, .28);
       -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
       mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
     }
@@ -451,7 +483,7 @@
       animation: marquee 32s linear infinite;
       font-family: var(--font-display);
       font-style: italic;
-      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-size: clamp(1.85rem, 2.8vw, 2.6rem);
       line-height: 1;
       letter-spacing: -0.5px;
       white-space: nowrap;
@@ -477,43 +509,28 @@
     .questions {
       position: relative;
       background: var(--paper);
-      padding: clamp(80px, 10vw, 140px) 0;
-      overflow: hidden;
-    }
-
-    .questions::before {
-      content: "";
-      position: absolute;
-      right: -6%;
-      top: 8%;
-      width: 320px;
-      height: 300px;
-      background: url('https://dnacreators.net/wp-content/uploads/corner-background-motif.png') no-repeat right top;
-      opacity: .35;
-      transform: scaleX(-1);
-      pointer-events: none;
+      padding: clamp(80px, 9vw, 128px) 0 clamp(48px, 6vw, 72px);
     }
 
     .questions-intro {
-      max-width: 860px;
-      margin-bottom: clamp(48px, 6vw, 80px);
+      max-width: 720px;
+      margin-bottom: 8px;
     }
 
     .questions-intro h2 {
       font-family: var(--font-display);
       font-style: italic;
       font-weight: 400;
-      font-size: clamp(2.4rem, 5vw, 3.6rem);
-      line-height: 1em;
-      letter-spacing: -0.5px;
+      font-size: clamp(2.2rem, 4vw, 3.25rem);
+      line-height: .95;
+      letter-spacing: -1.5px;
       color: var(--ink);
-      margin-top: 12px;
+      margin-top: 10px;
     }
 
     .questions-grid {
       display: flex;
       flex-direction: column;
-      gap: 0;
       position: relative;
     }
 
@@ -531,19 +548,20 @@
       display: grid;
       grid-template-columns: auto 1fr;
       gap: clamp(24px, 4vw, 64px);
-      padding: clamp(40px, 6vw, 72px) 0;
-      border-top: 1px solid var(--line);
+      padding: 64px 0;
+      border-top: 1px solid rgba(7, 9, 13, .08);
       color: var(--ink);
-      background: none;
-      position: relative;
+      scroll-margin-top: 28px;
     }
 
-    .question-card:last-child {
-      border-bottom: 1px solid var(--line);
+    .question-card:first-child {
+      border-top: 0;
+      padding-top: 56px;
     }
 
     .question-number {
-      font-family: var(--font-display-regular);
+      font-family: var(--font-display);
+      font-weight: 400;
       font-size: clamp(3.2rem, 7vw, 5.6rem);
       letter-spacing: -2px;
       line-height: .8;
@@ -551,50 +569,50 @@
       position: relative;
       z-index: 1;
       min-width: 1.4em;
+      margin-left: -8px;
+      padding: 8px 10px 0;
+      background: var(--paper);
     }
 
     .question-category {
       font-family: var(--font-main);
-      font-size: .82rem;
+      font-size: .72rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: .04em;
+      letter-spacing: .16em;
       color: var(--gray-text);
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
     .question-title {
       font-family: var(--font-display);
       font-style: italic;
       font-weight: 400;
-      font-size: clamp(1.8rem, 3.2vw, 2.4rem);
-      line-height: 1.1em;
-      letter-spacing: -0.5px;
+      font-size: clamp(1.65rem, 2.2vw, 2.15rem);
+      line-height: 1.02;
+      letter-spacing: -1px;
       color: var(--ink);
-      max-width: 22ch;
-      margin: 0 0 32px;
+      max-width: none;
+      margin: 0 0 36px;
     }
 
     .question-copy {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 20px;
     }
 
     .question-copy p {
       margin: 0;
-      padding: 22px 24px 24px;
-      border-radius: 16px;
+      padding: 26px 28px 28px;
+      border-radius: 18px;
       border-left: 4px solid var(--red);
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.45;
-      letter-spacing: -0.5px;
-      color: var(--ink);
-    }
-
-    .question-copy p:first-child {
       background: var(--pink);
+      font-size: 1.125rem;
+      font-weight: 400;
+      line-height: 1.55;
+      letter-spacing: -0.25px;
+      color: var(--ink);
     }
 
     .question-copy p:last-child {
@@ -604,18 +622,91 @@
 
     .question-copy strong {
       display: block;
-      margin-bottom: 12px;
-      font-family: var(--font-display);
-      font-style: italic;
-      font-weight: 400;
-      font-size: 1.35rem;
-      text-transform: none;
-      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+      font-family: var(--font-main);
+      font-style: normal;
+      font-weight: 700;
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .16em;
       color: var(--red);
     }
 
     .question-copy p:last-child strong {
       color: var(--blue);
+    }
+
+    .next-step {
+      padding: clamp(88px, 10vw, 140px) 0 clamp(72px, 8vw, 112px);
+      background: var(--white);
+    }
+
+    .next-step .section-label {
+      font-family: var(--font-main);
+      font-style: normal;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .next-step-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: clamp(32px, 5vw, 80px);
+      align-items: end;
+    }
+
+    .next-step h2 {
+      font-family: var(--font-main);
+      font-style: normal;
+      font-weight: 400;
+      font-size: clamp(2.1rem, 3.6vw, 3.15rem);
+      line-height: 1.05;
+      letter-spacing: -1.2px;
+      max-width: 11em;
+      margin: 16px 0 0;
+    }
+
+    .next-step h2 i {
+      display: block;
+      margin-top: 8px;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--red);
+    }
+
+    .next-step-copy p {
+      max-width: 34em;
+      font-size: 1.05rem;
+      line-height: 1.55;
+      letter-spacing: -0.2px;
+    }
+
+    .next-step .cta-actions {
+      margin-top: 28px;
+    }
+
+    .next-step-note {
+      margin-top: 18px;
+      color: var(--gray-text);
+      font-size: .9rem;
+      letter-spacing: 0;
+    }
+
+    .next-step-line {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(7, 9, 13, .08);
+      max-width: 14em;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.7rem, 2.8vw, 2.35rem);
+      line-height: 1.05;
+      letter-spacing: -0.6px;
+      color: var(--ink);
     }
 
     .statement {
@@ -675,7 +766,7 @@
     .section-label {
       font-family: var(--font-display);
       font-style: italic;
-      font-size: 1.75rem;
+      font-size: 1.45rem;
       font-weight: 400;
       letter-spacing: -0.5px;
       color: var(--red);
@@ -891,7 +982,7 @@
       line-height: 1.4rem;
       letter-spacing: -0.5px;
       text-transform: none;
-      transition: transform .3s ease, background-color .2s ease, color .2s ease;
+      transition: transform .3s ease;
       transform-origin: center;
       cursor: pointer;
     }
@@ -908,6 +999,12 @@
 
     .btn:hover {
       transform: scale(1.06);
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 3px;
     }
 
     .contact-form {
@@ -999,7 +1096,7 @@
     footer {
       background: var(--blue);
       color: var(--paper);
-      padding: 48px 0 36px;
+      padding: 56px 0 44px;
     }
 
     .footer-inner {
@@ -1073,12 +1170,16 @@
 
       .hero {
         background-size: 50%;
-        padding: 0 0 94px;
+        padding: 0 0 48px;
       }
 
       .hero-grid {
-        min-height: 85vh;
-        padding-right: 1em;
+        min-height: 0;
+      }
+
+      .hero-grid > :first-child {
+        padding-top: 36px;
+        padding-bottom: 8px;
       }
 
       .hero::before,
@@ -1091,7 +1192,8 @@
       .hero-grid,
       .question-copy,
       .about-grid,
-      .form-grid {
+      .form-grid,
+      .next-step-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1100,8 +1202,9 @@
       }
 
       .hero-title {
-        font-size: 2.4rem;
-        letter-spacing: -2px;
+        font-size: 2.15rem;
+        letter-spacing: -1px;
+        line-height: 1.08;
         max-width: none;
       }
 
@@ -1117,8 +1220,14 @@
 
       .question-card {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 12px;
         padding: 40px 0;
+      }
+
+      .question-number {
+        margin-left: 0;
+        padding: 0;
+        background: transparent;
       }
 
       .question-title {
@@ -1126,11 +1235,30 @@
         margin-bottom: 24px;
       }
 
-      .question-title,
+      .questions {
+        padding-top: 56px;
+      }
+
+      .questions-intro h2 {
+        font-size: 2rem;
+        line-height: 1.08;
+      }
+
+      .question-title {
+        font-size: 1.65rem;
+        line-height: 1.15;
+        letter-spacing: -0.4px;
+      }
+
+      .marquee-track {
+        line-height: 1.2;
+      }
+
       .about h2,
-      .cta h2 {
-        font-size: 2.4rem;
-        letter-spacing: -2px;
+      .cta h2,
+      .next-step h2 {
+        font-size: 2.15rem;
+        letter-spacing: -1.2px;
       }
 
       .footer-inner {
@@ -1148,7 +1276,12 @@
       .float-dot,
       .event-chip i,
       .event-pass i,
-      .reveal {
+      .reveal,
+      .stage-panel,
+      .stage-panel.is-on .stage-split p,
+      .band-num,
+      .band.is-in .band-answers p,
+      .deck-card {
         animation: none;
         transition: none;
         opacity: 1;
@@ -1171,9 +1304,13 @@
         <i></i>
         GSIC Summit · Valencia · 7–8 October
       </div>
-      <a href="#contact" class="header-link">
-        Let's talk
-      </a>
+      <!--
+      <div class="lang-switch">
+        <button type="button" data-lang="en" class="is-active">EN</button>
+        <button type="button" data-lang="es">ES</button>
+      </div>
+      -->
+      <a href="#next" class="header-link" data-i18n="nav.talk"></a>
     </div>
   </div>
 </header>
@@ -1190,26 +1327,20 @@
 
       <div>
         <h1 class="hero-title">
-          Your technology is smarter than your marketing.
-          <i>Let's change that.</i>
+          <span data-i18n="hero.title"></span>
+          <i data-i18n="hero.change"></i>
         </h1>
 
-        <p class="hero-intro">
-          Five questions for ambitious <strong>sports-tech businesses</strong>
-          that want to turn innovation into attention,
-          customers and measurable growth.
-        </p>
+        <p class="hero-intro" data-i18n-html="hero.intro"></p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#question-01">
-            Start with question 01
-          </a>
+          <a class="btn btn-primary" href="#question-01" data-i18n="hero.cta"></a>
         </div>
 
         <div class="event-pass">
           <i></i>
           <div class="event-pass-body">
-            <span class="event-pass-kicker">Live at the summit</span>
+            <span class="event-pass-kicker" data-i18n="pass.live"></span>
             <strong>GSIC Summit</strong>
             <p>Valencia / 7–8 October</p>
           </div>
@@ -1225,7 +1356,6 @@
 
     </div>
   </section>
-
 
   <section class="coral-band">
     <div class="container">
@@ -1258,12 +1388,11 @@
     </div>
   </section>
 
-
   <section class="questions">
     <div class="container">
       <div class="questions-intro reveal">
-        <p class="section-label">The brief</p>
-        <h2>Five questions. Five answers.</h2>
+        <p class="section-label" data-i18n="brief.label"></p>
+        <h2 data-i18n="brief.title"></h2>
       </div>
 
       <div class="questions-grid">
@@ -1271,97 +1400,87 @@
         <div class="question-number">01</div>
         <div>
           <div class="question-category">#Audience</div>
-          <h3 class="question-title">
-            Do you know who's buying, or just who's liking?
-          </h3>
+          <h3 class="question-title" data-i18n="q1.title"></h3>
           <div class="question-copy">
             <p>
-              <strong>The challenge</strong>
-              Reach can look like success without reaching people who actually buy.
+              <strong data-i18n="label.challenge"></strong>
+              <span data-i18n="q1.challenge"></span>
             </p>
             <p>
-              <strong>Our view</strong>
-              Start with who matters, and what moves them to a decision.
+              <strong data-i18n="label.view"></strong>
+              <span data-i18n="q1.view"></span>
             </p>
           </div>
         </div>
       </article>
 
-      <article class="question-card reveal">
+      <article class="question-card reveal" id="question-02">
         <div class="question-number">02</div>
         <div>
           <div class="question-category">#Positioning</div>
-          <h3 class="question-title">
-            Are you selling technology, or giving people a reason to care?
-          </h3>
+          <h3 class="question-title" data-i18n="q2.title"></h3>
           <div class="question-copy">
             <p>
-              <strong>The challenge</strong>
-              Features aren't a reason to care. People want to know why it matters to them.
+              <strong data-i18n="label.challenge"></strong>
+              <span data-i18n="q2.challenge"></span>
             </p>
             <p>
-              <strong>Our view</strong>
-              Positioning turns complexity into a reason to choose you.
+              <strong data-i18n="label.view"></strong>
+              <span data-i18n="q2.view"></span>
             </p>
           </div>
         </div>
       </article>
 
-      <article class="question-card reveal">
+      <article class="question-card reveal" id="question-03">
         <div class="question-number">03</div>
         <div>
           <div class="question-category">#Media</div>
-          <h3 class="question-title">
-            Are you everywhere, or where it actually matters?
-          </h3>
+          <h3 class="question-title" data-i18n="q3.title"></h3>
           <div class="question-copy">
             <p>
-              <strong>The challenge</strong>
-              Being everywhere isn't a media strategy. It's expensive noise.
+              <strong data-i18n="label.challenge"></strong>
+              <span data-i18n="q3.challenge"></span>
             </p>
             <p>
-              <strong>Our view</strong>
-              Invest where your audience actually pays attention.
+              <strong data-i18n="label.view"></strong>
+              <span data-i18n="q3.view"></span>
             </p>
           </div>
         </div>
       </article>
 
-      <article class="question-card reveal">
+      <article class="question-card reveal" id="question-04">
         <div class="question-number">04</div>
         <div>
           <div class="question-category">#Communication funnel</div>
-          <h3 class="question-title">
-            You got their attention. Now what?
-          </h3>
+          <h3 class="question-title" data-i18n="q4.title"></h3>
           <div class="question-copy">
             <p>
-              <strong>The challenge</strong>
-              Attention without a next step rarely becomes growth.
+              <strong data-i18n="label.challenge"></strong>
+              <span data-i18n="q4.challenge"></span>
             </p>
             <p>
-              <strong>Our view</strong>
-              Build one journey from awareness to conversion.
+              <strong data-i18n="label.view"></strong>
+              <span data-i18n="q4.view"></span>
             </p>
           </div>
         </div>
       </article>
 
-      <article class="question-card reveal">
+      <article class="question-card reveal" id="question-05">
         <div class="question-number">05</div>
         <div>
           <div class="question-category">#Performance</div>
-          <h3 class="question-title">
-            Your dashboard looks great. But is your business growing?
-          </h3>
+          <h3 class="question-title" data-i18n="q5.title"></h3>
           <div class="question-copy">
             <p>
-              <strong>The challenge</strong>
-              Clicks and engagement are useful. They're not the end goal.
+              <strong data-i18n="label.challenge"></strong>
+              <span data-i18n="q5.challenge"></span>
             </p>
             <p>
-              <strong>Our view</strong>
-              Connect activity to leads, cost and revenue.
+              <strong data-i18n="label.view"></strong>
+              <span data-i18n="q5.view"></span>
             </p>
           </div>
         </div>
@@ -1370,150 +1489,42 @@
     </div>
   </section>
 
-
-  <section class="statement">
-    <div class="container reveal">
-      <h2>
-        Smart technology needs smart marketing.
-      </h2>
-      <p>
-        DNA brings strategy, creativity, media and performance
-        together to help ambitious businesses turn attention
-        into measurable growth.
-      </p>
-    </div>
-  </section>
-
-
-  <section class="about">
-    <div class="container about-grid reveal">
-
-      <div class="about-copy">
-        <p class="section-label">
-          About DNA
-        </p>
-        <h2>
-          Your marketing allies, minus the corporate pretence.
-        </h2>
-
-        <p>
-          DNA Creators is a global collective of experienced
-          marketing specialists helping businesses build stronger
-          brands, reach the right audiences and create sustainable growth.
-        </p>
-
-        <div class="capabilities">
-          <span class="capability">#Strategy</span>
-          <span class="capability">#Creativity</span>
-          <span class="capability">#Media</span>
-          <span class="capability">#Performance</span>
-          <span class="capability">#Branding</span>
-          <span class="capability">#Digital</span>
-        </div>
-      </div>
-
-      <div class="about-visual">
-        <img
-          src="https://dnacreators.net/wp-content/uploads/dna-creators-who-we-are-poster-03.webp"
-          alt=""
-        />
-      </div>
-
-    </div>
-  </section>
-
-
-  <section class="cta" id="contact">
+  <section class="next-step reveal" id="next">
     <div class="container">
-
-      <div class="cta-meet reveal">
-        <h2>
-          Want to continue the conversation?
-        </h2>
-
-        <div class="cta-event">
-          <span>GSIC Summit</span>
-          <span>Valencia</span>
-          <span>7–8 October</span>
+      <div class="next-step-grid">
+        <div>
+          <p class="section-label" data-i18n="next.label"></p>
+          <h2>
+            <span data-i18n="next.title"></span>
+            <i data-i18n="next.help"></i>
+          </h2>
         </div>
-
-        <div class="cta-actions">
-          <a href="https://dnacreators.net/" class="btn btn-primary">
-            Book a chat
-          </a>
-          <a
-            href="https://www.linkedin.com/company/dna-creators"
-            class="btn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Connect on LinkedIn
-          </a>
+        <div class="next-step-copy">
+          <p data-i18n="next.body"></p>
+          <div class="cta-actions">
+            <a
+              class="btn btn-primary"
+              id="email-us"
+              href="mailto:dna@dnacreators.net?subject=GSIC%20Summit"
+              data-i18n="next.email"
+            ></a>
+            <a
+              class="btn"
+              id="whatsapp-us"
+              href="https://wa.me/447984941683"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-i18n="next.whatsapp"
+            ></a>
+          </div>
+          <p class="next-step-note" data-i18n="next.note"></p>
         </div>
       </div>
-
-      <div class="contact-box reveal">
-          <form
-            class="contact-form"
-            action="#"
-            method="POST"
-          >
-            <div class="form-grid">
-              <div class="form-field">
-                <label for="name">Name</label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  placeholder="What should we call you?"
-                  required
-                />
-              </div>
-
-              <div class="form-field">
-                <label for="email">Email</label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="you@business.com"
-                  required
-                />
-              </div>
-
-              <div class="form-field full">
-                <label for="company">Company</label>
-                <input
-                  id="company"
-                  name="company"
-                  type="text"
-                  placeholder="Your company"
-                />
-              </div>
-
-              <div class="form-field full">
-                <label for="message">Tell us what's on your mind</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  placeholder="Technology, growth, marketing... let's talk."
-                ></textarea>
-              </div>
-            </div>
-
-            <div class="form-submit">
-              <button class="btn btn-primary" type="submit">
-                Send message
-              </button>
-              <p class="form-status" hidden></p>
-            </div>
-          </form>
-        </div>
+      <p class="next-step-line" data-i18n="statement.title"></p>
     </div>
   </section>
 
 </main>
-
 
 <footer>
   <div class="container footer-inner">
@@ -1548,56 +1559,180 @@
     observer.observe(el);
   });
 
+  const i18n = {
+    en: {
+      "nav.talk": "Let's talk",
+      "hero.title": "Your technology is smarter than your marketing.",
+      "hero.change": "Let's change that.",
+      "hero.intro": "Five questions for ambitious <strong>sports-tech businesses</strong> that want to turn innovation into attention, customers and measurable growth.",
+      "hero.cta": "Start with question 01",
+      "pass.live": "Live at the summit",
+      "stats.event": "Event",
+      "stats.city": "City",
+      "stats.dates": "Dates",
+      "brief.label": "The brief",
+      "brief.title": "Five questions. Five answers.",
+      "label.challenge": "The challenge",
+      "label.view": "Our view",
+      "q.next": "Next question",
+      "v2.label": "Version 02",
+      "v2.title": "One question at a time.",
+      "v3.label": "Version 03",
+      "v3.title": "Walk down the line.",
+      "v4.label": "Version 04",
+      "v4.title": "Swipe the five.",
+      "q1.title": "Do you know who's buying, or just who's liking?",
+      "q1.challenge": "Reach can look like success without reaching people who actually buy.",
+      "q1.view": "Start with who matters, and what moves them to a decision.",
+      "q2.title": "Are you selling technology, or giving people a reason to care?",
+      "q2.challenge": "Features aren't a reason to care. People want to know why it matters to them.",
+      "q2.view": "Positioning turns complexity into a reason to choose you.",
+      "q3.title": "Are you everywhere, or where it actually matters?",
+      "q3.challenge": "Being everywhere isn't a media strategy. It's expensive noise.",
+      "q3.view": "Invest where your audience actually pays attention.",
+      "q4.title": "You got their attention. Now what?",
+      "q4.challenge": "Attention without a next step rarely becomes growth.",
+      "q4.view": "Build one journey from awareness to conversion.",
+      "q5.title": "Your dashboard looks great. But is your business growing?",
+      "q5.challenge": "Clicks and engagement are useful. They're not the end goal.",
+      "q5.view": "Connect activity to leads, cost and revenue.",
+      "next.label": "Next step",
+      "next.title": "If one of these questions rings a bell, get in touch.",
+      "next.help": "We can help!",
+      "next.body": "Tell us which question hit, and your site. We'll reply with the one fix worth making, by email or WhatsApp.",
+      "next.email": "Email us",
+      "next.whatsapp": "WhatsApp us",
+      "next.note": "No sales deck. No call unless you want one.",
+      "next.waText": "Hi DNA, I saw your questions at GSIC Summit.",
+      "statement.title": "Smart technology needs smart marketing.",
+      "statement.body": "DNA brings strategy, creativity, media and performance together to help ambitious businesses turn attention into measurable growth.",
+      "about.label": "About DNA",
+      "about.title": "Your marketing allies, minus the corporate pretence.",
+      "about.body": "DNA Creators is a global collective of experienced marketing specialists helping businesses build stronger brands, reach the right audiences and create sustainable growth.",
+      "cta.title": "Want to continue the conversation?",
+      "cta.book": "Book a chat",
+      "cta.linkedin": "Connect on LinkedIn",
+      "form.name": "Name",
+      "form.namePh": "What should we call you?",
+      "form.email": "Email",
+      "form.company": "Company",
+      "form.companyPh": "Your company",
+      "form.message": "Tell us what's on your mind",
+      "form.messagePh": "Technology, growth, marketing... let's talk.",
+      "form.send": "Send message",
+      "form.ok": "Thanks. We will get back to you.",
+      "form.err": "Something went wrong. Please try again."
+    },
+    es: {
+      "nav.talk": "Hablemos",
+      "hero.title": "Tu tecnología es más inteligente que tu marketing.",
+      "hero.change": "Cambiemos eso.",
+      "hero.intro": "Cinco preguntas para <strong>empresas de sports-tech</strong> que quieren convertir innovación en atención, clientes y crecimiento medible.",
+      "hero.cta": "Empieza por la pregunta 01",
+      "pass.live": "En el summit",
+      "stats.event": "Evento",
+      "stats.city": "Ciudad",
+      "stats.dates": "Fechas",
+      "brief.label": "El brief",
+      "brief.title": "Cinco preguntas. Cinco respuestas.",
+      "label.challenge": "El reto",
+      "label.view": "Nuestra visión",
+      "q.next": "Siguiente pregunta",
+      "v2.label": "Versión 02",
+      "v2.title": "Una pregunta a la vez.",
+      "v3.label": "Versión 03",
+      "v3.title": "Baja por la línea.",
+      "v4.label": "Versión 04",
+      "v4.title": "Desliza las cinco.",
+      "q1.title": "¿Sabes quién compra, o solo quién da like?",
+      "q1.challenge": "El alcance puede parecer un éxito sin llegar a quien realmente compra.",
+      "q1.view": "Empieza por quién importa, y qué les lleva a decidir.",
+      "q2.title": "¿Vendes tecnología, o das una razón para importarles?",
+      "q2.challenge": "Las features no son una razón para importar. La gente quiere saber por qué les importa a ellos.",
+      "q2.view": "El posicionamiento convierte lo complejo en una razón para elegirte.",
+      "q3.title": "¿Estás en todas partes, o donde de verdad importa?",
+      "q3.challenge": "Estar en todas partes no es una estrategia de medios. Es ruido caro.",
+      "q3.view": "Invierte donde tu audiencia ya presta atención.",
+      "q4.title": "Ya tienes su atención. ¿Y ahora qué?",
+      "q4.challenge": "La atención sin un siguiente paso rara vez se convierte en crecimiento.",
+      "q4.view": "Un solo recorrido, de la primera mirada a la conversión.",
+      "q5.title": "Tu dashboard se ve genial. ¿Pero crece el negocio?",
+      "q5.challenge": "Los clics y el engagement sirven. No son el objetivo.",
+      "q5.view": "Conecta la actividad con leads, coste e ingresos.",
+      "next.label": "Siguiente paso",
+      "next.title": "Si alguna de estas preguntas te suena, escríbenos.",
+      "next.help": "¡Podemos ayudar!",
+      "next.body": "Dinos qué pregunta te ha tocado, y tu web. Te respondemos con el único cambio que merece la pena, por email o WhatsApp.",
+      "next.email": "Escríbenos",
+      "next.whatsapp": "WhatsApp",
+      "next.note": "Sin presentación comercial. Sin llamada, salvo que la quieras.",
+      "next.waText": "Hola DNA, he visto vuestras preguntas en el GSIC Summit.",
+      "statement.title": "La tecnología inteligente necesita marketing inteligente.",
+      "statement.body": "DNA une estrategia, creatividad, medios y performance para ayudar a negocios ambiciosos a convertir atención en crecimiento medible.",
+      "about.label": "Sobre DNA",
+      "about.title": "Tus aliados de marketing, sin pose corporativa.",
+      "about.body": "DNA Creators es un colectivo global de especialistas en marketing que ayudan a las empresas a construir marcas más fuertes, llegar a las audiencias correctas y crear crecimiento sostenible.",
+      "cta.title": "¿Seguimos la conversación?",
+      "cta.book": "Reserva un chat",
+      "cta.linkedin": "Conecta en LinkedIn",
+      "form.name": "Nombre",
+      "form.namePh": "¿Cómo te llamamos?",
+      "form.email": "Email",
+      "form.company": "Empresa",
+      "form.companyPh": "Tu empresa",
+      "form.message": "Cuéntanos qué tienes en mente",
+      "form.messagePh": "Tecnología, crecimiento, marketing... hablemos.",
+      "form.send": "Enviar mensaje",
+      "form.ok": "Gracias. Te escribimos pronto.",
+      "form.err": "Algo ha fallado. Inténtalo de nuevo."
+    }
+  };
+
   const params = new URLSearchParams(window.location.search);
+  let lang = "en";
+  if (!i18n[lang]) lang = "en";
+
+  function applyLang(next) {
+    lang = next;
+    localStorage.setItem("lang", next);
+    document.documentElement.lang = next;
+    const copy = i18n[next];
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const value = copy[el.dataset.i18n];
+      if (value) el.textContent = value;
+    });
+    document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+      const value = copy[el.dataset.i18nHtml];
+      if (value) el.innerHTML = value;
+    });
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+      const value = copy[el.dataset.i18nPlaceholder];
+      if (value) el.placeholder = value;
+    });
+    document.querySelectorAll(".lang-switch button").forEach((btn) => {
+      btn.classList.toggle("is-active", btn.dataset.lang === next);
+    });
+    const email = document.getElementById("email-us");
+    const whatsapp = document.getElementById("whatsapp-us");
+    if (email) {
+      email.href = "mailto:dna@dnacreators.net?subject=" + encodeURIComponent("GSIC Summit");
+    }
+    if (whatsapp) {
+      whatsapp.href = "https://wa.me/447984941683?text=" + encodeURIComponent(copy["next.waText"]);
+    }
+  }
+
+  applyLang(lang);
+
+  document.querySelectorAll(".lang-switch button").forEach((btn) => {
+    btn.addEventListener("click", () => applyLang(btn.dataset.lang));
+  });
 
   if (
     params.get("utm_medium") === "qr"
   ) {
     console.log("QR visit detected");
   }
-
-  const form = document.querySelector(".contact-form");
-  const status = document.querySelector(".form-status");
-  const submit = form.querySelector("button[type='submit']");
-
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    status.hidden = true;
-    status.classList.remove("is-error", "is-success");
-    submit.disabled = true;
-
-    const data = Object.fromEntries(new FormData(form).entries());
-
-    if (window.location.protocol === "file:") {
-      status.textContent = "Something went wrong. Please try again.";
-      status.classList.add("is-error");
-      status.hidden = false;
-      submit.disabled = false;
-      return;
-    }
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      if (!response.ok) {
-        throw new Error();
-      }
-
-      form.reset();
-      status.textContent = "Thanks. We will get back to you.";
-      status.classList.add("is-success");
-    } catch {
-      status.textContent = "Something went wrong. Please try again.";
-      status.classList.add("is-error");
-    } finally {
-      status.hidden = false;
-      submit.disabled = false;
-    }
-  });
 </script>
 
 </body>
