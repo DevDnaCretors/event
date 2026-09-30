@@ -1,1512 +1,1805 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>DNA Field Notes / 001 — Sports Tech Marketing</title>
-  <meta
-    name="description"
-    content="Five questions for ambitious sports-tech businesses. Strategy, creativity, media and performance by DNA Creators."
-  />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <title>DNA Field Notes / 001 — Sports Tech Marketing</title>
+    <meta
+      name="description"
+      content="Five questions for ambitious sports-tech businesses. Strategy, creativity, media and performance by DNA Creators."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <style>
-    @font-face {
-      font-family: 'Chubbo variable';
-      font-style: normal;
-      font-weight: 100 900;
-      font-display: swap;
-      src: url('https://dnacreators.net/wp-content/uploads/Chubbo-Variable.ttf') format('truetype');
-    }
+    <style>
+      @font-face {
+        font-family: "Chubbo variable";
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url("https://dnacreators.net/wp-content/uploads/Chubbo-Variable.ttf")
+          format("truetype");
+      }
 
-    @font-face {
-      font-family: 'Chubbo variable';
-      font-style: italic;
-      font-weight: 100 900;
-      font-display: swap;
-      src: url('https://dnacreators.net/wp-content/uploads/Chubbo-VariableItalic.ttf') format('truetype');
-    }
+      @font-face {
+        font-family: "Chubbo variable";
+        font-style: italic;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url("https://dnacreators.net/wp-content/uploads/Chubbo-VariableItalic.ttf")
+          format("truetype");
+      }
 
-    :root {
-      --red: #FF6455;
-      --blue: #4892FF;
-      --ink: #07090D;
-      --paper: #FAFAFA;
-      --white: #FFFFFF;
-      --line: #E2E2E2;
-      --gray: #B3B3B3;
-      --pink: #FFD0CC;
-      --blue-soft: #C7DDFF;
-      --gray-text: #666666;
-      --gray-text-dark: #333333;
-      --bg: #FFFFFF;
-      --text: #07090D;
-      --muted: #666666;
-      --accent: #FF6455;
-      --border: #E2E2E2;
-      --max-width: 1440px;
-      --page-space: clamp(16px, 5vw, 80px);
-      --font-main: 'Sora', sans-serif;
-      --font-display: 'Chubbo variable', sans-serif;
-      --font-display-regular: 'Chubbo variable', sans-serif;
-    }
+      :root {
+        --red: #ff6455;
+        --blue: #4892ff;
+        --ink: #07090d;
+        --paper: #fafafa;
+        --white: #ffffff;
+        --line: #e2e2e2;
+        --gray: #b3b3b3;
+        --pink: #ffd0cc;
+        --blue-soft: #c7ddff;
+        --gray-text: #666666;
+        --gray-text-dark: #333333;
+        --bg: #ffffff;
+        --text: #07090d;
+        --muted: #666666;
+        --accent: #ff6455;
+        --border: #e2e2e2;
+        --max-width: 1440px;
+        --page-space: clamp(16px, 5vw, 80px);
+        --font-main: "Sora", sans-serif;
+        --font-display: "Chubbo variable", sans-serif;
+        --font-display-regular: "Chubbo variable", sans-serif;
+      }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 96px;
-    }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 96px;
+      }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-main);
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.4rem;
-      letter-spacing: -0.5px;
-      -webkit-font-smoothing: antialiased;
-      font-synthesis: none;
-      overflow-x: hidden;
-    }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-main);
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.4rem;
+        letter-spacing: -0.5px;
+        -webkit-font-smoothing: antialiased;
+        font-synthesis: none;
+        overflow-x: hidden;
+      }
 
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 50;
-      opacity: .025;
-      background-image: radial-gradient(var(--ink) .7px, transparent .7px);
-      background-size: 22px 22px;
-    }
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 50;
+        opacity: 0.025;
+        background-image: radial-gradient(var(--ink) 0.7px, transparent 0.7px);
+        background-size: 22px 22px;
+      }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
 
-    .container {
-      width: min(
-        calc(100% - (var(--page-space) * 2)),
-        var(--max-width)
-      );
-      margin-inline: auto;
-    }
+      .container {
+        width: min(calc(100% - (var(--page-space) * 2)), var(--max-width));
+        margin-inline: auto;
+      }
 
-    .header {
-      position: relative;
-      width: 100%;
-      padding: 18px 0;
-      z-index: 20;
+      .header {
+        position: relative;
+        width: 100%;
+        padding: 18px 0;
+        z-index: 20;
+        background: var(--white);
+        border-bottom: 1px solid rgba(7, 9, 13, 0.06);
+      }
+
+      .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+
+      .header-meta {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .lang-switch {
+        display: inline-flex;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        overflow: hidden;
+        background: var(--white);
+      }
+
+      .lang-switch button {
+        border: 0;
+        background: transparent;
+        padding: 8px 12px;
+        font-family: var(--font-main);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        color: var(--gray-text);
+        cursor: pointer;
+      }
+
+      .lang-switch button.is-active {
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .event-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 14px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--white);
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--gray-text-dark);
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .event-chip i {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--red);
+        display: inline-block;
+        animation: pulse 1.8s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.35);
+          opacity: 0.45;
+        }
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 48px;
+        width: auto;
+        display: block;
+      }
+
+      .header-link {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 24px;
+        border-radius: 12px;
+        background: var(--red);
+        color: var(--paper);
+        font-family: var(--font-main);
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.4rem;
+        letter-spacing: -0.5px;
+        transition: transform 0.3s ease;
+        transform-origin: center;
+      }
+
+      .header-link:hover {
+        transform: scale(1.06);
+      }
+
+      .hero {
+        position: relative;
+        display: block;
+        padding: 0 0 134px;
+        background-color: var(--white);
+        background-image: url("https://dnacreators.net/wp-content/uploads/Vector.png");
+        background-position: left bottom;
+        background-repeat: no-repeat;
+        background-size: 22%;
+        overflow: hidden;
+      }
+
+      .hero-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        align-items: start;
+        width: min(calc(100% - (var(--page-space) * 2)), var(--max-width));
+        margin-inline: auto;
+        padding-left: 0;
+        padding-right: 0;
+        min-height: 100vh;
+      }
+
+      .hero-grid > :first-child {
+        padding-top: 140px;
+        padding-bottom: 48px;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 259px;
+        height: 244px;
+        background: url("https://dnacreators.net/wp-content/uploads/corner-background-motif.png")
+          no-repeat left top;
+        pointer-events: none;
+      }
+
+      .hero-glow {
+        position: absolute;
+        right: -8%;
+        top: 8%;
+        width: 58%;
+        height: 72%;
+        background:
+          radial-gradient(
+            circle at 40% 40%,
+            rgba(255, 208, 204, 0.7),
+            transparent 58%
+          ),
+          radial-gradient(
+            circle at 70% 70%,
+            rgba(199, 221, 255, 0.8),
+            transparent 55%
+          );
+        filter: blur(8px);
+        pointer-events: none;
+      }
+
+      .float-dot {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+        animation: floaty 9s ease-in-out infinite;
+      }
+
+      .float-dot.a {
+        width: 14px;
+        height: 14px;
+        background: var(--red);
+        top: 22%;
+        right: 18%;
+      }
+      .float-dot.b {
+        width: 10px;
+        height: 10px;
+        background: var(--blue);
+        top: 62%;
+        right: 8%;
+        animation-delay: -3s;
+      }
+      .float-dot.c {
+        width: 8px;
+        height: 8px;
+        background: var(--pink);
+        top: 38%;
+        right: 42%;
+        animation-delay: -5s;
+      }
+
+      @keyframes floaty {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-18px);
+        }
+      }
+
+      .hero-title {
+        font-family: var(--font-main);
+        font-size: clamp(2.4rem, 5vw, 3.6rem);
+        font-weight: 400;
+        line-height: 1em;
+        letter-spacing: -1px;
+        max-width: 14ch;
+      }
+
+      .hero-title i {
+        font-family: var(--font-display);
+        font-style: italic;
+        font-weight: 400;
+        color: var(--red);
+      }
+
+      .hero-intro {
+        margin-top: 28px;
+        max-width: 34em;
+        font-size: 1.05rem;
+        font-weight: 400;
+        line-height: 1.55;
+        letter-spacing: -0.3px;
+      }
+
+      .hero-intro strong {
+        font-weight: 700;
+      }
+
+      .hero-actions {
+        margin-top: 36px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .event-pass {
+        margin-top: 28px;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        max-width: 100%;
+        padding: 10px 16px 10px 12px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--white);
+        box-shadow: 0 10px 28px rgba(7, 9, 13, 0.04);
+      }
+
+      .event-pass i {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--red);
+        flex-shrink: 0;
+        animation: pulse 1.8s ease-in-out infinite;
+      }
+
+      .event-pass-body {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 6px 12px;
+      }
+
+      .event-pass-kicker {
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--red);
+      }
+
+      .event-pass strong {
+        font-family: var(--font-display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.15rem;
+        line-height: 1.1;
+        letter-spacing: -0.5px;
+      }
+
+      .event-pass p {
+        color: var(--gray-text);
+        font-size: 0.85rem;
+      }
+
+      .hero-visual {
+        padding: 48px 4em 0 0;
+        position: relative;
+      }
+
+      .hero-visual img {
+        display: block;
+        width: 100%;
+        height: auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .coral-band {
+        position: relative;
+        background-color: var(--red);
+        background-image: url("https://dnacreators.net/wp-content/uploads/canva1.png");
+        background-position: left top;
+        background-repeat: no-repeat;
+        background-size: 22%;
+        color: var(--paper);
+        padding: 72px 0 0;
+        overflow: hidden;
+      }
+
+      .coral-band::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.08),
+          transparent 28%,
+          transparent 72%,
+          rgba(7, 9, 13, 0.08)
+        );
+      }
+
+      .event-stats {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        max-width: 1040px;
+      }
+
+      .event-stats div {
+        padding-right: 32px;
+        border-right: 1px solid rgba(250, 250, 250, 0.28);
+      }
+
+      .event-stats div:last-child {
+        border-right: 0;
+      }
+
+      .event-stats span {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.8;
+        margin-bottom: 10px;
+      }
+
+      .event-stats div:first-child span::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--paper);
+        animation: pulse 1.8s ease-in-out infinite;
+      }
+
+      .event-stats strong {
+        display: block;
+        font-family: var(--font-display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: clamp(1.85rem, 2.6vw, 2.5rem);
+        line-height: 1.1;
+        letter-spacing: -0.5px;
+      }
+
+      .marquee {
+        position: relative;
+        z-index: 1;
+        margin-top: 56px;
+        padding: 22px 0 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-top: 1px solid rgba(250, 250, 250, 0.28);
+        -webkit-mask-image: linear-gradient(
+          90deg,
+          transparent,
+          #000 7%,
+          #000 93%,
+          transparent
+        );
+        mask-image: linear-gradient(
+          90deg,
+          transparent,
+          #000 7%,
+          #000 93%,
+          transparent
+        );
+      }
+
+      .marquee-track {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        width: max-content;
+        animation: marquee 32s linear infinite;
+        font-family: var(--font-display);
+        font-style: italic;
+        font-size: clamp(1.85rem, 2.8vw, 2.6rem);
+        line-height: 1;
+        letter-spacing: -0.5px;
+        white-space: nowrap;
+      }
+
+      .marquee-track i {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: rgba(250, 250, 250, 0.4);
+        flex: 0 0 auto;
+      }
+
+      .marquee:hover .marquee-track {
+        animation-play-state: paused;
+      }
+
+      @keyframes marquee {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      .questions {
+        position: relative;
+        background: var(--paper);
+        padding: clamp(80px, 9vw, 128px) 0 clamp(48px, 6vw, 72px);
+      }
+
+      .questions-intro {
+        max-width: 720px;
+        margin-bottom: 8px;
+      }
+
+      .questions-intro h2 {
+        font-family: var(--font-display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: clamp(2.2rem, 4vw, 3.25rem);
+        line-height: 0.95;
+        letter-spacing: -1.5px;
+        color: var(--ink);
+        margin-top: 10px;
+      }
+
+      .questions-grid {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+
+      .questions-grid::before {
+        content: "";
+        position: absolute;
+        left: 28px;
+        top: 24px;
+        bottom: 24px;
+        width: 2px;
+        background: linear-gradient(var(--pink), var(--blue-soft));
+      }
+
+      .question-card {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: clamp(24px, 4vw, 64px);
+        padding: 64px 0;
+        border-top: 1px solid rgba(7, 9, 13, 0.08);
+        color: var(--ink);
+        scroll-margin-top: 28px;
+      }
+
+      .question-card:first-child {
+        border-top: 0;
+        padding-top: 56px;
+      }
+
+      .question-number {
+        font-family: var(--font-display);
+        font-weight: 400;
+        font-size: clamp(3.2rem, 7vw, 5.6rem);
+        letter-spacing: -2px;
+        line-height: 0.8;
+        color: var(--red);
+        position: relative;
+        z-index: 1;
+        min-width: 1.4em;
+        margin-left: -8px;
+        padding: 8px 10px 0;
+        background: var(--paper);
+      }
+
+      .question-category {
+        font-family: var(--font-main);
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: var(--gray-text);
+        margin-bottom: 18px;
+      }
+
+      .question-title {
+        font-family: var(--font-display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: clamp(1.65rem, 2.2vw, 2.15rem);
+        line-height: 1.02;
+        letter-spacing: -1px;
+        color: var(--ink);
+        max-width: none;
+        margin: 0 0 36px;
+      }
+
+      .question-copy {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .question-copy p {
+        margin: 0;
+        padding: 26px 28px 28px;
+        border-radius: 18px;
+        border-left: 4px solid var(--red);
+        background: var(--pink);
+        font-size: 1.125rem;
+        font-weight: 400;
+        line-height: 1.55;
+        letter-spacing: -0.25px;
+        color: var(--ink);
+      }
+
+      .question-copy p:last-child {
+        background: var(--blue-soft);
+        border-left-color: var(--blue);
+      }
+
+      .question-copy strong {
+        display: block;
+        margin-bottom: 16px;
+        font-family: var(--font-main);
+        font-style: normal;
+        font-weight: 700;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: var(--red);
+      }
+
+      .question-copy p:last-child strong {
+        color: var(--blue);
+      }
+
+    .direct {
+      padding: clamp(64px, 8vw, 96px) 0;
       background: var(--white);
-      border-bottom: 1px solid rgba(7, 9, 13, .06);
     }
 
-    .header-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-
-    .header-meta {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .lang-switch {
-      display: inline-flex;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      overflow: hidden;
-      background: var(--white);
-    }
-
-    .lang-switch button {
-      border: 0;
-      background: transparent;
-      padding: 8px 12px;
-      font-family: var(--font-main);
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .06em;
-      color: var(--gray-text);
-      cursor: pointer;
-    }
-
-    .lang-switch button.is-active {
-      background: var(--ink);
-      color: var(--paper);
-    }
-
-    .event-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 14px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: var(--white);
-      font-size: .72rem;
-      font-weight: 600;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--gray-text-dark);
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .event-chip i {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--red);
-      display: inline-block;
-      animation: pulse 1.8s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.35); opacity: .45; }
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo img {
-      height: 48px;
-      width: auto;
-      display: block;
-    }
-
-    .header-link {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      padding: 12px 24px;
-      border-radius: 12px;
-      background: var(--red);
-      color: var(--paper);
-      font-family: var(--font-main);
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.4rem;
-      letter-spacing: -0.5px;
-      transition: transform .3s ease;
-      transform-origin: center;
-    }
-
-    .header-link:hover {
-      transform: scale(1.06);
-    }
-
-    .hero {
-      position: relative;
-      display: block;
-      padding: 0 0 134px;
-      background-color: var(--white);
-      background-image: url('https://dnacreators.net/wp-content/uploads/Vector.png');
-      background-position: left bottom;
-      background-repeat: no-repeat;
-      background-size: 22%;
-      overflow: hidden;
-    }
-
-    .hero-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      align-items: start;
-      width: min(
-        calc(100% - (var(--page-space) * 2)),
-        var(--max-width)
-      );
-      margin-inline: auto;
-      padding-left: 0;
-      padding-right: 0;
-      min-height: 100vh;
-    }
-
-    .hero-grid > :first-child {
-      padding-top: 140px;
-      padding-bottom: 48px;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 259px;
-      height: 244px;
-      background: url('https://dnacreators.net/wp-content/uploads/corner-background-motif.png') no-repeat left top;
-      pointer-events: none;
-    }
-
-    .hero-glow {
-      position: absolute;
-      right: -8%;
-      top: 8%;
-      width: 58%;
-      height: 72%;
-      background:
-        radial-gradient(circle at 40% 40%, rgba(255, 208, 204, .7), transparent 58%),
-        radial-gradient(circle at 70% 70%, rgba(199, 221, 255, .8), transparent 55%);
-      filter: blur(8px);
-      pointer-events: none;
-    }
-
-    .float-dot {
-      position: absolute;
-      border-radius: 50%;
-      pointer-events: none;
-      animation: floaty 9s ease-in-out infinite;
-    }
-
-    .float-dot.a { width: 14px; height: 14px; background: var(--red); top: 22%; right: 18%; }
-    .float-dot.b { width: 10px; height: 10px; background: var(--blue); top: 62%; right: 8%; animation-delay: -3s; }
-    .float-dot.c { width: 8px; height: 8px; background: var(--pink); top: 38%; right: 42%; animation-delay: -5s; }
-
-    @keyframes floaty {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-18px); }
-    }
-
-    .hero-title {
-      font-family: var(--font-main);
-      font-size: clamp(2.4rem, 5vw, 3.6rem);
-      font-weight: 400;
-      line-height: 1em;
-      letter-spacing: -1px;
-      max-width: 14ch;
-    }
-
-    .hero-title i {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-weight: 400;
-      color: var(--red);
-    }
-
-    .hero-intro {
-      margin-top: 28px;
-      max-width: 34em;
-      font-size: 1.05rem;
-      font-weight: 400;
-      line-height: 1.55;
-      letter-spacing: -0.3px;
-    }
-
-    .hero-intro strong {
-      font-weight: 700;
-    }
-
-    .hero-actions {
-      margin-top: 36px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .event-pass {
-      margin-top: 28px;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      max-width: 100%;
-      padding: 10px 16px 10px 12px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: var(--white);
-      box-shadow: 0 10px 28px rgba(7, 9, 13, .04);
-    }
-
-    .event-pass i {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--red);
-      flex-shrink: 0;
-      animation: pulse 1.8s ease-in-out infinite;
-    }
-
-    .event-pass-body {
-      display: flex;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 6px 12px;
-    }
-
-    .event-pass-kicker {
-      font-size: .7rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--red);
-    }
-
-    .event-pass strong {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-weight: 400;
-      font-size: 1.15rem;
-      line-height: 1.1;
-      letter-spacing: -0.5px;
-    }
-
-    .event-pass p {
-      color: var(--gray-text);
-      font-size: .85rem;
-    }
-
-    .hero-visual {
-      padding: 48px 4em 0 0;
-      position: relative;
-    }
-
-    .hero-visual img {
-      display: block;
-      width: 100%;
-      height: auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .coral-band {
-      position: relative;
-      background-color: var(--red);
-      background-image: url('https://dnacreators.net/wp-content/uploads/canva1.png');
-      background-position: left top;
-      background-repeat: no-repeat;
-      background-size: 22%;
-      color: var(--paper);
-      padding: 72px 0 0;
-      overflow: hidden;
-    }
-
-    .coral-band::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, .08),
-        transparent 28%,
-        transparent 72%,
-        rgba(7, 9, 13, .08)
-      );
-    }
-
-    .event-stats {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      max-width: 1040px;
-    }
-
-    .event-stats div {
-      padding-right: 32px;
-      border-right: 1px solid rgba(250, 250, 250, .28);
-    }
-
-    .event-stats div:last-child {
-      border-right: 0;
-    }
-
-    .event-stats span {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      opacity: .8;
-      margin-bottom: 10px;
-    }
-
-    .event-stats div:first-child span::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--paper);
-      animation: pulse 1.8s ease-in-out infinite;
-    }
-
-    .event-stats strong {
-      display: block;
-      font-family: var(--font-display);
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(1.85rem, 2.6vw, 2.5rem);
-      line-height: 1.1;
-      letter-spacing: -0.5px;
-    }
-
-    .marquee {
-      position: relative;
-      z-index: 1;
-      margin-top: 56px;
-      padding: 22px 0 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      border-top: 1px solid rgba(250, 250, 250, .28);
-      -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
-      mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
-    }
-
-    .marquee-track {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      width: max-content;
-      animation: marquee 32s linear infinite;
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: clamp(1.85rem, 2.8vw, 2.6rem);
-      line-height: 1;
-      letter-spacing: -0.5px;
-      white-space: nowrap;
-    }
-
-    .marquee-track i {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: rgba(250, 250, 250, .4);
-      flex: 0 0 auto;
-    }
-
-    .marquee:hover .marquee-track {
-      animation-play-state: paused;
-    }
-
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    .questions {
-      position: relative;
-      background: var(--paper);
-      padding: clamp(80px, 9vw, 128px) 0 clamp(48px, 6vw, 72px);
-    }
-
-    .questions-intro {
-      max-width: 720px;
-      margin-bottom: 8px;
-    }
-
-    .questions-intro h2 {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(2.2rem, 4vw, 3.25rem);
-      line-height: .95;
-      letter-spacing: -1.5px;
-      color: var(--ink);
-      margin-top: 10px;
-    }
-
-    .questions-grid {
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    .questions-grid::before {
-      content: "";
-      position: absolute;
-      left: 28px;
-      top: 24px;
-      bottom: 24px;
-      width: 2px;
-      background: linear-gradient(var(--pink), var(--blue-soft));
-    }
-
-    .question-card {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: clamp(24px, 4vw, 64px);
-      padding: 64px 0;
-      border-top: 1px solid rgba(7, 9, 13, .08);
-      color: var(--ink);
-      scroll-margin-top: 28px;
-    }
-
-    .question-card:first-child {
-      border-top: 0;
-      padding-top: 56px;
-    }
-
-    .question-number {
-      font-family: var(--font-display);
-      font-weight: 400;
-      font-size: clamp(3.2rem, 7vw, 5.6rem);
-      letter-spacing: -2px;
-      line-height: .8;
-      color: var(--red);
-      position: relative;
-      z-index: 1;
-      min-width: 1.4em;
-      margin-left: -8px;
-      padding: 8px 10px 0;
-      background: var(--paper);
-    }
-
-    .question-category {
-      font-family: var(--font-main);
-      font-size: .72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .16em;
-      color: var(--gray-text);
-      margin-bottom: 18px;
-    }
-
-    .question-title {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(1.65rem, 2.2vw, 2.15rem);
-      line-height: 1.02;
-      letter-spacing: -1px;
-      color: var(--ink);
-      max-width: none;
-      margin: 0 0 36px;
-    }
-
-    .question-copy {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .question-copy p {
-      margin: 0;
-      padding: 26px 28px 28px;
-      border-radius: 18px;
-      border-left: 4px solid var(--red);
-      background: var(--pink);
-      font-size: 1.125rem;
-      font-weight: 400;
-      line-height: 1.55;
-      letter-spacing: -0.25px;
-      color: var(--ink);
-    }
-
-    .question-copy p:last-child {
-      background: var(--blue-soft);
-      border-left-color: var(--blue);
-    }
-
-    .question-copy strong {
-      display: block;
-      margin-bottom: 16px;
-      font-family: var(--font-main);
-      font-style: normal;
-      font-weight: 700;
-      font-size: .68rem;
-      text-transform: uppercase;
-      letter-spacing: .16em;
-      color: var(--red);
-    }
-
-    .question-copy p:last-child strong {
-      color: var(--blue);
-    }
-
-    .next-step {
-      padding: clamp(88px, 10vw, 140px) 0 clamp(72px, 8vw, 112px);
-      background: var(--white);
-    }
-
-    .next-step .section-label {
-      font-family: var(--font-main);
-      font-style: normal;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-
-    .next-step-grid {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: clamp(32px, 5vw, 80px);
-      align-items: end;
-    }
-
-    .next-step h2 {
+    .direct h2 {
       font-family: var(--font-main);
       font-style: normal;
       font-weight: 400;
       font-size: clamp(2.1rem, 3.6vw, 3.15rem);
       line-height: 1.05;
       letter-spacing: -1.2px;
-      max-width: 11em;
-      margin: 16px 0 0;
+      margin: 0 0 12px;
     }
 
-    .next-step h2 i {
-      display: block;
-      margin-top: 8px;
-      font-family: var(--font-display);
-      font-style: italic;
-      font-weight: 400;
-      color: var(--red);
-    }
-
-    .next-step-copy p {
-      max-width: 34em;
+    .direct p {
+      max-width: 28em;
+      margin: 0 0 28px;
       font-size: 1.05rem;
       line-height: 1.55;
       letter-spacing: -0.2px;
     }
 
-    .next-step .cta-actions {
-      margin-top: 28px;
-    }
-
-    .next-step-note {
-      margin-top: 18px;
-      color: var(--gray-text);
-      font-size: .9rem;
-      letter-spacing: 0;
-    }
-
-    .next-step-line {
-      margin-top: 56px;
-      padding-top: 28px;
-      border-top: 1px solid rgba(7, 9, 13, .08);
-      max-width: 14em;
-      font-family: var(--font-display);
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(1.7rem, 2.8vw, 2.35rem);
-      line-height: 1.05;
-      letter-spacing: -0.6px;
-      color: var(--ink);
-    }
-
-    .statement {
-      position: relative;
+      .next-step {
+      padding: clamp(88px, 10vw, 140px) 0 clamp(72px, 8vw, 112px);
       background: var(--white);
-      padding: clamp(100px, 12vw, 180px) 0;
-      overflow: hidden;
     }
 
-    .statement::before {
-      content: "DNA";
-      position: absolute;
-      right: -2%;
-      bottom: -18%;
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: clamp(8rem, 22vw, 18rem);
-      line-height: .7;
-      color: var(--paper);
-      pointer-events: none;
-      user-select: none;
-    }
-
-    .statement h2 {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(2.4rem, 5vw, 3.6rem);
-      line-height: 1em;
-      letter-spacing: -0.5px;
-      max-width: 1300px;
-      position: relative;
-    }
-
-    .statement p {
-      margin-top: 36px;
-      max-width: 650px;
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.4rem;
-      letter-spacing: -0.5px;
-      position: relative;
-    }
-
-    .about {
-      padding: clamp(80px, 10vw, 140px) 0;
-      background: var(--paper);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: clamp(40px, 6vw, 80px);
-      align-items: center;
-    }
-
-    .section-label {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: 1.45rem;
-      font-weight: 400;
-      letter-spacing: -0.5px;
-      color: var(--red);
-    }
-
-    .about-copy .section-label {
-      margin-bottom: 16px;
-    }
-
-    .about-visual {
-      position: relative;
-    }
-
-    .about-visual img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .about-visual::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background: radial-gradient(
-        ellipse 78% 74% at 50% 48%,
-        transparent 38%,
-        var(--paper) 82%
-      );
-    }
-
-    .about h2 {
-      font-family: var(--font-main);
-      font-style: normal;
-      font-weight: 400;
-      font-size: clamp(2rem, 4vw, 2.4rem);
-      letter-spacing: -1.5px;
-      line-height: 1.2;
-      margin-bottom: 28px;
-    }
-
-    .about p {
-      max-width: 750px;
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.4rem;
-      letter-spacing: -0.5px;
-    }
-
-    .capabilities {
-      margin-top: 36px;
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 8px;
-    }
-
-    .capability {
-      padding: 10px 14px;
-      border-radius: 12px;
-      font-size: .85rem;
-      font-weight: 400;
-      letter-spacing: -0.5px;
-      text-transform: none;
-      white-space: nowrap;
-      background: var(--blue-soft);
-      color: var(--ink);
-    }
-
-    .capability:nth-child(even) {
-      background: var(--pink);
-    }
-
-    .cta {
-      position: relative;
-      padding: clamp(80px, 10vw, 140px) 0;
-      background: var(--white);
-      overflow: hidden;
-    }
-
-    .cta::before {
-      content: "";
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 259px;
-      height: 244px;
-      background: url('https://dnacreators.net/wp-content/uploads/corner-background-motif.png') no-repeat right top;
-      transform: scaleX(-1);
-      pointer-events: none;
-      opacity: .45;
-    }
-
-    .cta::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 22%;
-      height: 42%;
-      background: url('https://dnacreators.net/wp-content/uploads/Vector.png') no-repeat left bottom;
-      background-size: contain;
-      pointer-events: none;
-      opacity: .85;
-    }
-
-    .cta-meet {
-      position: relative;
-      z-index: 1;
-    }
-
-    .cta h2 {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(2.4rem, 5vw, 2.4rem);
-      line-height: 1em;
-      letter-spacing: -0.5px;
-      max-width: 1200px;
-      margin-bottom: 24px;
-      color: var(--red);
-    }
-
-    .cta-event {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 32px;
-    }
-
-    .cta-event span {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      font-size: .82rem;
-      font-weight: 700;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-    }
-
-    .cta-event span::before {
-      content: "";
-      width: 14px;
-      height: 14px;
-      background: var(--red);
-      -webkit-mask-repeat: no-repeat;
-      mask-repeat: no-repeat;
-      -webkit-mask-position: center;
-      mask-position: center;
-      -webkit-mask-size: contain;
-      mask-size: contain;
-    }
-
-    .cta-event span:nth-child(1)::before {
-      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M4 14V3.2l8.5 3.4-8.5 3.4'/%3E%3C/svg%3E");
-      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M4 14V3.2l8.5 3.4-8.5 3.4'/%3E%3C/svg%3E");
-    }
-
-    .cta-event span:nth-child(2)::before {
-      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linejoin='round'%3E%3Cpath d='M8 14s5-4.3 5-8A5 5 0 1 0 3 6c0 3.7 5 8 5 8z'/%3E%3Ccircle cx='8' cy='6' r='1.5'/%3E%3C/svg%3E");
-      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linejoin='round'%3E%3Cpath d='M8 14s5-4.3 5-8A5 5 0 1 0 3 6c0 3.7 5 8 5 8z'/%3E%3Ccircle cx='8' cy='6' r='1.5'/%3E%3C/svg%3E");
-    }
-
-    .cta-event span:nth-child(3)::before {
-      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linejoin='round' stroke-linecap='round'%3E%3Crect x='2.5' y='3.5' width='11' height='10' rx='1.5'/%3E%3Cpath d='M2.5 6.5h11M5.5 2.5v2M10.5 2.5v2'/%3E%3C/svg%3E");
-      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linejoin='round' stroke-linecap='round'%3E%3Crect x='2.5' y='3.5' width='11' height='10' rx='1.5'/%3E%3Cpath d='M2.5 6.5h11M5.5 2.5v2M10.5 2.5v2'/%3E%3C/svg%3E");
-    }
-
-    .cta-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    .contact-box {
-      background: var(--blue);
-      color: var(--paper);
-      border-radius: 16px;
-      padding: 32px;
-      position: relative;
-      z-index: 1;
-      overflow: hidden;
-      margin-top: 56px;
-    }
-
-    .contact-box::after {
-      content: "";
-      position: absolute;
-      right: -40px;
-      bottom: -40px;
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, .12);
-    }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 0;
-      padding: 12px 24px;
-      border-radius: 12px;
-      border: 0;
-      background: var(--paper);
-      color: var(--blue);
-      font-family: var(--font-main);
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.4rem;
-      letter-spacing: -0.5px;
-      text-transform: none;
-      transition: transform .3s ease;
-      transform-origin: center;
-      cursor: pointer;
-    }
-
-    .btn:not(.btn-primary) {
-      border: 1.5px solid var(--blue);
-    }
-
-    .btn.btn-primary {
-      background: var(--red);
-      color: var(--paper);
-      border: 0;
-    }
-
-    .btn:hover {
-      transform: scale(1.06);
-    }
-
-    a:focus-visible,
-    button:focus-visible {
-      outline: 2px solid var(--ink);
-      outline-offset: 3px;
-    }
-
-    .contact-form {
-      margin-top: 8px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    .form-field {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .form-field.full {
-      grid-column: 1 / -1;
-    }
-
-    label {
-      font-size: .82rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      border: 0;
-      border-bottom: 1px solid rgba(250, 250, 250, .55);
-      background: transparent;
-      padding: 12px 0;
-      font-family: var(--font-main);
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.3;
-      letter-spacing: -0.5px;
-      color: var(--paper);
-      outline: none;
-    }
-
-    input::placeholder,
-    textarea::placeholder {
-      color: rgba(250, 250, 250, .7);
-    }
-
-    input:focus,
-    textarea:focus {
-      border-bottom-color: var(--paper);
-    }
-
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .form-submit {
-      margin-top: 28px;
-    }
-
-    .form-status {
-      margin-top: 16px;
-      font-size: .95rem;
-      line-height: 1.4;
-    }
-
-    .form-status.is-success {
-      font-size: 1.35rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      color: #B8FF6A;
-    }
-
-    .form-status.is-error {
-      color: var(--pink);
-    }
-
-    .contact-box .btn-primary {
-      background: var(--paper);
-      color: var(--red);
-    }
-
-    footer {
-      background: var(--blue);
-      color: var(--paper);
-      padding: 56px 0 44px;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 30px;
-      font-size: .8rem;
-      font-weight: 400;
-      line-height: 1.4rem;
-      letter-spacing: -0.5px;
-    }
-
-    .footer-brand img {
-      height: 40px;
-      width: auto;
-      display: block;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(35px);
-      transition:
-        opacity .8s ease,
-        transform .8s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    @media (max-width: 1024px) {
-      .hero {
-        background-size: 31%;
-        padding-bottom: 68px;
+      .next-step .section-label {
+        font-family: var(--font-main);
+        font-style: normal;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
       }
 
-      .hero-visual {
-        padding-right: 0;
-      }
-
-      .coral-band {
-        background-size: 31%;
-      }
-
-      .event-chip {
-        display: none;
-      }
-
-      .event-stats {
-        grid-template-columns: 1fr;
-      }
-
-      .event-stats div {
-        border-right: 0;
-        border-bottom: 1px solid rgba(250, 250, 250, .28);
-        padding: 0 0 18px;
-      }
-
-      .event-stats div:last-child {
-        border-bottom: 0;
-        padding-bottom: 0;
-      }
-    }
-
-    @media (max-width: 800px) {
-      body {
-        font-size: 1.1rem;
-      }
-
-      .hero {
-        background-size: 50%;
-        padding: 0 0 48px;
-      }
-
-      .hero-grid {
-        min-height: 0;
-      }
-
-      .hero-grid > :first-child {
-        padding-top: 36px;
-        padding-bottom: 8px;
-      }
-
-      .hero::before,
-      .questions-grid::before {
-        background-size: 0;
-        width: 0;
-        height: 0;
-      }
-
-      .hero-grid,
-      .question-copy,
-      .about-grid,
-      .form-grid,
       .next-step-grid {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: clamp(32px, 5vw, 80px);
+        align-items: end;
+      }
+
+      .next-step h2 {
+        font-family: var(--font-main);
+        font-style: normal;
+        font-weight: 400;
+        font-size: clamp(2.1rem, 3.6vw, 3.15rem);
+        line-height: 1.05;
+        letter-spacing: -1.2px;
+        max-width: 11em;
+        margin: 16px 0 0;
+      }
+
+      .next-step h2 i {
+        display: block;
+        margin-top: 8px;
+        font-family: var(--font-display);
+        font-style: italic;
+        font-weight: 400;
+        color: var(--red);
+      }
+
+      .next-step-copy p {
+        max-width: 34em;
+        font-size: 1.05rem;
+        line-height: 1.55;
+        letter-spacing: -0.2px;
+      }
+
+      .next-step-copy p + p {
+        margin-top: 12px;
+      }
+
+      .next-step .cta-actions {
+        margin-top: 28px;
+      }
+
+      .contact-box .reco-choices {
+        display: grid;
+        gap: 8px;
+      }
+
+      .contact-box .reco-choices label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 400;
+        text-transform: none;
+        letter-spacing: -0.3px;
+      }
+
+      .contact-box .reco-choices input {
+        width: 18px;
+        height: 18px;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        accent-color: var(--paper);
+        flex: 0 0 auto;
+      }
+
+      .next-step-note {
+        margin-top: 18px;
+        color: var(--gray-text);
+        font-size: 0.9rem;
+        letter-spacing: 0;
+      }
+
+      .next-step-line {
+        margin-top: 56px;
+        padding-top: 28px;
+        border-top: 1px solid rgba(7, 9, 13, 0.08);
+        max-width: 14em;
+        font-family: var(--font-display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: clamp(1.7rem, 2.8vw, 2.35rem);
+        line-height: 1.05;
+        letter-spacing: -0.6px;
+        color: var(--ink);
+      }
+
+      .statement {
+        position: relative;
+        background: var(--white);
+        padding: clamp(100px, 12vw, 180px) 0;
+        overflow: hidden;
+      }
+
+      .statement::before {
+        content: "DNA";
+        position: absolute;
+        right: -2%;
+        bottom: -18%;
+        font-family: var(--font-display);
+        font-style: italic;
+        font-size: clamp(8rem, 22vw, 18rem);
+        line-height: 0.7;
+        color: var(--paper);
+        pointer-events: none;
+        user-select: none;
+      }
+
+      .statement h2 {
+        font-family: var(--font-display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: clamp(2.4rem, 5vw, 3.6rem);
+        line-height: 1em;
+        letter-spacing: -0.5px;
+        max-width: 1300px;
+        position: relative;
+      }
+
+      .statement p {
+        margin-top: 36px;
+        max-width: 650px;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.4rem;
+        letter-spacing: -0.5px;
+        position: relative;
+      }
+
+      .about {
+        padding: clamp(80px, 10vw, 140px) 0;
+        background: var(--paper);
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: clamp(40px, 6vw, 80px);
+        align-items: center;
+      }
+
+      .section-label {
+        font-family: var(--font-display);
+        font-style: italic;
+        font-size: 1.45rem;
+        font-weight: 400;
+        letter-spacing: -0.5px;
+        color: var(--red);
+      }
+
+      .about-copy .section-label {
+        margin-bottom: 16px;
+      }
+
+      .about-visual {
+        position: relative;
+      }
+
+      .about-visual img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .about-visual::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: radial-gradient(
+          ellipse 78% 74% at 50% 48%,
+          transparent 38%,
+          var(--paper) 82%
+        );
+      }
+
+      .about h2 {
+        font-family: var(--font-main);
+        font-style: normal;
+        font-weight: 400;
+        font-size: clamp(2rem, 4vw, 2.4rem);
+        letter-spacing: -1.5px;
+        line-height: 1.2;
+        margin-bottom: 28px;
+      }
+
+      .about p {
+        max-width: 750px;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.4rem;
+        letter-spacing: -0.5px;
       }
 
       .capabilities {
-        flex-wrap: wrap;
+        margin-top: 36px;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 8px;
       }
 
-      .hero-title {
-        font-size: 2.15rem;
-        letter-spacing: -1px;
-        line-height: 1.08;
-        max-width: none;
+      .capability {
+        padding: 10px 14px;
+        border-radius: 12px;
+        font-size: 0.85rem;
+        font-weight: 400;
+        letter-spacing: -0.5px;
+        text-transform: none;
+        white-space: nowrap;
+        background: var(--blue-soft);
+        color: var(--ink);
       }
 
-      .hero-visual {
-        padding: 28px 1em 0;
-        margin-bottom: 0;
+      .capability:nth-child(even) {
+        background: var(--pink);
       }
 
-      .coral-band {
-        background-size: 0;
-        padding: 64px 0 40px;
+      .cta {
+        position: relative;
+        padding: clamp(80px, 10vw, 140px) 0;
+        background: var(--white);
+        overflow: hidden;
       }
 
-      .question-card {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        padding: 40px 0;
+      .cta::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 259px;
+        height: 244px;
+        background: url("https://dnacreators.net/wp-content/uploads/corner-background-motif.png")
+          no-repeat right top;
+        transform: scaleX(-1);
+        pointer-events: none;
+        opacity: 0.45;
       }
 
-      .question-number {
-        margin-left: 0;
-        padding: 0;
-        background: transparent;
+      .cta::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 22%;
+        height: 42%;
+        background: url("https://dnacreators.net/wp-content/uploads/Vector.png")
+          no-repeat left bottom;
+        background-size: contain;
+        pointer-events: none;
+        opacity: 0.85;
       }
 
-      .question-title {
-        max-width: none;
+      .cta-meet {
+        position: relative;
+        z-index: 1;
+      }
+
+      .cta h2 {
+        font-family: var(--font-display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: clamp(2.4rem, 5vw, 2.4rem);
+        line-height: 1em;
+        letter-spacing: -0.5px;
+        max-width: 1200px;
         margin-bottom: 24px;
+        color: var(--red);
       }
 
-      .questions {
-        padding-top: 56px;
+      .cta-event {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 32px;
       }
 
-      .questions-intro h2 {
-        font-size: 2rem;
-        line-height: 1.08;
+      .cta-event span {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
       }
 
-      .question-title {
-        font-size: 1.65rem;
-        line-height: 1.15;
-        letter-spacing: -0.4px;
+      .cta-event span::before {
+        content: "";
+        width: 14px;
+        height: 14px;
+        background: var(--red);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
       }
 
-      .marquee-track {
-        line-height: 1.2;
+      .cta-event span:nth-child(1)::before {
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M4 14V3.2l8.5 3.4-8.5 3.4'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M4 14V3.2l8.5 3.4-8.5 3.4'/%3E%3C/svg%3E");
       }
 
-      .about h2,
-      .cta h2,
-      .next-step h2 {
-        font-size: 2.15rem;
-        letter-spacing: -1.2px;
+      .cta-event span:nth-child(2)::before {
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linejoin='round'%3E%3Cpath d='M8 14s5-4.3 5-8A5 5 0 1 0 3 6c0 3.7 5 8 5 8z'/%3E%3Ccircle cx='8' cy='6' r='1.5'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linejoin='round'%3E%3Cpath d='M8 14s5-4.3 5-8A5 5 0 1 0 3 6c0 3.7 5 8 5 8z'/%3E%3Ccircle cx='8' cy='6' r='1.5'/%3E%3C/svg%3E");
+      }
+
+      .cta-event span:nth-child(3)::before {
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linejoin='round' stroke-linecap='round'%3E%3Crect x='2.5' y='3.5' width='11' height='10' rx='1.5'/%3E%3Cpath d='M2.5 6.5h11M5.5 2.5v2M10.5 2.5v2'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.6' stroke-linejoin='round' stroke-linecap='round'%3E%3Crect x='2.5' y='3.5' width='11' height='10' rx='1.5'/%3E%3Cpath d='M2.5 6.5h11M5.5 2.5v2M10.5 2.5v2'/%3E%3C/svg%3E");
+      }
+
+      .cta-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .contact-box {
+        background: var(--blue);
+        color: var(--paper);
+        border-radius: 16px;
+        padding: 32px;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        margin-top: 56px;
+      }
+
+      .contact-box::after {
+        content: "";
+        position: absolute;
+        right: -40px;
+        bottom: -40px;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      .btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 0;
+        padding: 12px 24px;
+        border-radius: 12px;
+        border: 0;
+        background: var(--paper);
+        color: var(--blue);
+        font-family: var(--font-main);
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.4rem;
+        letter-spacing: -0.5px;
+        text-transform: none;
+        transition: transform 0.3s ease;
+        transform-origin: center;
+        cursor: pointer;
+      }
+
+      .btn:not(.btn-primary) {
+        border: 1.5px solid var(--blue);
+      }
+
+      .btn.btn-primary {
+        background: var(--red);
+        color: var(--paper);
+        border: 0;
+      }
+
+      .btn:hover {
+        transform: scale(1.06);
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--ink);
+        outline-offset: 3px;
+      }
+
+      .contact-form {
+        margin-top: 8px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+
+      .form-field {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .form-field.full {
+        grid-column: 1 / -1;
+      }
+
+      label {
+        font-size: 0.82rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        border: 0;
+        border-bottom: 1px solid rgba(250, 250, 250, 0.55);
+        background: transparent;
+        padding: 12px 0;
+        font-family: var(--font-main);
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.3;
+        letter-spacing: -0.5px;
+        color: var(--paper);
+        outline: none;
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        color: rgba(250, 250, 250, 0.7);
+      }
+
+      input:focus,
+      textarea:focus {
+        border-bottom-color: var(--paper);
+      }
+
+      textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .form-required-note {
+        margin: 0 0 16px;
+        font-size: 0.9rem;
+        line-height: 1.4;
+        letter-spacing: -0.2px;
+      }
+
+      .form-field:has(> input[required]) > label::after,
+      .form-field:has(> textarea[required]) > label::after {
+        content: " *";
+        color: var(--pink);
+      }
+
+      .form-field.is-invalid input,
+      .form-field.is-invalid textarea {
+        border-bottom: 2px solid var(--pink);
+      }
+
+      .form-submit {
+        margin-top: 28px;
+      }
+
+      .form-status {
+        margin: 18px 0 0;
+        padding: 14px 16px;
+        border-radius: 12px;
+        font-size: 1.05rem;
+        font-weight: 600;
+        line-height: 1.4;
+        letter-spacing: -0.3px;
+      }
+
+      .form-status[hidden] {
+        display: none;
+      }
+
+      .form-status.is-success {
+        background: transparent;
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 1.35rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        color: #b8ff6a;
+      }
+
+      .form-status.is-error {
+        background: var(--pink);
+        color: var(--ink);
+      }
+
+      .contact-box .btn-primary {
+        background: var(--paper);
+        color: var(--red);
+      }
+
+      #recommendations {
+        padding-bottom: clamp(88px, 12vw, 140px);
+      }
+
+      #recommendations .contact-box {
+        margin-top: 8px;
+        padding: 22px 24px 18px;
+      }
+
+      #recommendations .form-grid {
+        gap: 12px 20px;
+      }
+
+      #recommendations .form-field {
+        gap: 4px;
+      }
+
+      #recommendations input,
+      #recommendations textarea {
+        padding: 6px 0;
+      }
+
+      #recommendations textarea {
+        min-height: 72px;
+      }
+
+      #recommendations .form-submit {
+        margin-top: 14px;
+      }
+
+      #recommendations .reco-choices {
+        gap: 8px;
+      }
+
+      footer {
+        background: var(--blue);
+        color: var(--paper);
+        padding: 56px 0 44px;
       }
 
       .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        font-size: 0.8rem;
+        font-weight: 400;
+        line-height: 1.4rem;
+        letter-spacing: -0.5px;
       }
 
-      .float-dot {
-        display: none;
+      .footer-brand img {
+        height: 40px;
+        width: auto;
+        display: block;
       }
-    }
 
-    @media (prefers-reduced-motion: reduce) {
-      .marquee-track,
-      .float-dot,
-      .event-chip i,
-      .event-pass i,
-      .reveal,
-      .stage-panel,
-      .stage-panel.is-on .stage-split p,
-      .band-num,
-      .band.is-in .band-answers p,
-      .deck-card {
-        animation: none;
-        transition: none;
+      .reveal {
+        opacity: 0;
+        transform: translateY(35px);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
+      }
+
+      .reveal.visible {
         opacity: 1;
         transform: none;
       }
-    }
-  </style>
-</head>
 
-<body>
+      @media (max-width: 1024px) {
+        .hero {
+          background-size: 31%;
+          padding-bottom: 68px;
+        }
 
-<header class="header">
-  <div class="container header-inner">
-    <a href="https://dnacreators.net/" class="logo">
-      <img src="https://dnacreators.net/wp-content/uploads/DNA-creators-logo-2.png" alt="DNA Creators" />
-    </a>
+        .hero-visual {
+          padding-right: 0;
+        }
 
-    <div class="header-meta">
-      <div class="event-chip">
-        <i></i>
-        GSIC Summit · Valencia · 7–8 October
-      </div>
-      <!--
+        .coral-band {
+          background-size: 31%;
+        }
+
+        .event-chip {
+          display: none;
+        }
+
+        .event-stats {
+          grid-template-columns: 1fr;
+        }
+
+        .event-stats div {
+          border-right: 0;
+          border-bottom: 1px solid rgba(250, 250, 250, 0.28);
+          padding: 0 0 18px;
+        }
+
+        .event-stats div:last-child {
+          border-bottom: 0;
+          padding-bottom: 0;
+        }
+      }
+
+      @media (max-width: 800px) {
+        body {
+          font-size: 1.1rem;
+        }
+
+        .hero {
+          background-size: 50%;
+          padding: 0 0 48px;
+        }
+
+        .hero-grid {
+          min-height: 0;
+        }
+
+        .hero-grid > :first-child {
+          padding-top: 36px;
+          padding-bottom: 8px;
+        }
+
+        .hero::before,
+        .questions-grid::before {
+          background-size: 0;
+          width: 0;
+          height: 0;
+        }
+
+        .hero-grid,
+        .question-copy,
+        .about-grid,
+        .form-grid,
+        .next-step-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .capabilities {
+          flex-wrap: wrap;
+        }
+
+        .hero-title {
+          font-size: 2.15rem;
+          letter-spacing: -1px;
+          line-height: 1.08;
+          max-width: none;
+        }
+
+        .hero-visual {
+          padding: 28px 1em 0;
+          margin-bottom: 0;
+        }
+
+        .coral-band {
+          background-size: 0;
+          padding: 64px 0 40px;
+        }
+
+        .question-card {
+          grid-template-columns: 1fr;
+          gap: 12px;
+          padding: 40px 0;
+        }
+
+        .question-number {
+          margin-left: 0;
+          padding: 0;
+          background: transparent;
+        }
+
+        .question-title {
+          max-width: none;
+          margin-bottom: 24px;
+        }
+
+        .questions {
+          padding-top: 56px;
+        }
+
+        .questions-intro h2 {
+          font-size: 2rem;
+          line-height: 1.08;
+        }
+
+        .question-title {
+          font-size: 1.65rem;
+          line-height: 1.15;
+          letter-spacing: -0.4px;
+        }
+
+        .marquee-track {
+          line-height: 1.2;
+        }
+
+        .about h2,
+        .cta h2,
+        .next-step h2 {
+          font-size: 2.15rem;
+          letter-spacing: -1.2px;
+        }
+
+        .footer-inner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .float-dot {
+          display: none;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .marquee-track,
+        .float-dot,
+        .event-chip i,
+        .event-pass i,
+        .reveal,
+        .stage-panel,
+        .stage-panel.is-on .stage-split p,
+        .band-num,
+        .band.is-in .band-answers p,
+        .deck-card {
+          animation: none;
+          transition: none;
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <a href="https://dnacreators.net/" class="logo">
+          <img
+            src="https://dnacreators.net/wp-content/uploads/DNA-creators-logo-2.png"
+            alt="DNA Creators"
+          />
+        </a>
+
+        <div class="header-meta">
+          <div class="event-chip">
+            <i></i>
+            GSIC Summit · Valencia · 7–8 October
+          </div>
+          <!--
       <div class="lang-switch">
         <button type="button" data-lang="en" class="is-active">EN</button>
         <button type="button" data-lang="es">ES</button>
       </div>
       -->
-      <a href="#next" class="header-link" data-i18n="nav.talk"></a>
-    </div>
-  </div>
-</header>
-
-
-<main>
-
-  <section class="hero">
-    <span class="hero-glow"></span>
-    <span class="float-dot a"></span>
-    <span class="float-dot b"></span>
-    <span class="float-dot c"></span>
-    <div class="hero-grid">
-
-      <div>
-        <h1 class="hero-title">
-          <span data-i18n="hero.title"></span>
-          <i data-i18n="hero.change"></i>
-        </h1>
-
-        <p class="hero-intro" data-i18n-html="hero.intro"></p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#question-01" data-i18n="hero.cta"></a>
-        </div>
-
-        <div class="event-pass">
-          <i></i>
-          <div class="event-pass-body">
-            <span class="event-pass-kicker" data-i18n="pass.live"></span>
-            <strong>GSIC Summit</strong>
-            <p>Valencia / 7–8 October</p>
-          </div>
+          <a href="#direct" class="header-link" data-i18n="nav.talk"></a>
         </div>
       </div>
+    </header>
 
-      <div class="hero-visual">
-        <img
-          src="https://dnacreators.net/wp-content/uploads/dna-creators-who-we-are-poster-03.webp"
-          alt=""
-        />
-      </div>
+    <main>
+      <section class="hero">
+        <span class="hero-glow"></span>
+        <span class="float-dot a"></span>
+        <span class="float-dot b"></span>
+        <span class="float-dot c"></span>
+        <div class="hero-grid">
+          <div>
+            <h1 class="hero-title">
+              <span data-i18n="hero.title"></span>
+              <i data-i18n="hero.change"></i>
+            </h1>
 
-    </div>
-  </section>
+            <p class="hero-intro" data-i18n-html="hero.intro"></p>
 
-  <section class="coral-band">
-    <div class="container">
-      <div class="event-stats">
-        <div>
-          <span>Event</span>
-          <strong>GSIC Summit</strong>
-        </div>
-        <div>
-          <span>City</span>
-          <strong>Valencia</strong>
-        </div>
-        <div>
-          <span>Dates</span>
-          <strong>7–8 October</strong>
-        </div>
-      </div>
-    </div>
-    <div class="marquee">
-      <div class="marquee-track">
-        <span>Strategy</span><i></i>
-        <span>Creativity</span><i></i>
-        <span>Media</span><i></i>
-        <span>Performance</span><i></i>
-        <span>Strategy</span><i></i>
-        <span>Creativity</span><i></i>
-        <span>Media</span><i></i>
-        <span>Performance</span><i></i>
-      </div>
-    </div>
-  </section>
+            <div class="hero-actions">
+              <a
+                class="btn btn-primary"
+                href="#question-01"
+                data-i18n="hero.cta"
+              ></a>
+            </div>
 
-  <section class="questions">
-    <div class="container">
-      <div class="questions-intro reveal">
-        <p class="section-label" data-i18n="brief.label"></p>
-        <h2 data-i18n="brief.title"></h2>
-      </div>
+            <div class="event-pass">
+              <i></i>
+              <div class="event-pass-body">
+                <span class="event-pass-kicker" data-i18n="pass.live"></span>
+                <strong>GSIC Summit</strong>
+                <p>Valencia / 7–8 October</p>
+              </div>
+            </div>
+          </div>
 
-      <div class="questions-grid">
-      <article class="question-card reveal" id="question-01">
-        <div class="question-number">01</div>
-        <div>
-          <div class="question-category">#Audience</div>
-          <h3 class="question-title" data-i18n="q1.title"></h3>
-          <div class="question-copy">
-            <p>
-              <strong data-i18n="label.challenge"></strong>
-              <span data-i18n="q1.challenge"></span>
-            </p>
-            <p>
-              <strong data-i18n="label.view"></strong>
-              <span data-i18n="q1.view"></span>
-            </p>
+          <div class="hero-visual">
+            <img
+              src="https://dnacreators.net/wp-content/uploads/dna-creators-who-we-are-poster-03.webp"
+              alt=""
+            />
           </div>
         </div>
-      </article>
+      </section>
 
-      <article class="question-card reveal" id="question-02">
-        <div class="question-number">02</div>
-        <div>
-          <div class="question-category">#Positioning</div>
-          <h3 class="question-title" data-i18n="q2.title"></h3>
-          <div class="question-copy">
-            <p>
-              <strong data-i18n="label.challenge"></strong>
-              <span data-i18n="q2.challenge"></span>
-            </p>
-            <p>
-              <strong data-i18n="label.view"></strong>
-              <span data-i18n="q2.view"></span>
-            </p>
+      <section class="coral-band">
+        <div class="container">
+          <div class="event-stats">
+            <div>
+              <span>Event</span>
+              <strong>GSIC Summit</strong>
+            </div>
+            <div>
+              <span>City</span>
+              <strong>Valencia</strong>
+            </div>
+            <div>
+              <span>Dates</span>
+              <strong>7–8 October</strong>
+            </div>
           </div>
         </div>
-      </article>
-
-      <article class="question-card reveal" id="question-03">
-        <div class="question-number">03</div>
-        <div>
-          <div class="question-category">#Media</div>
-          <h3 class="question-title" data-i18n="q3.title"></h3>
-          <div class="question-copy">
-            <p>
-              <strong data-i18n="label.challenge"></strong>
-              <span data-i18n="q3.challenge"></span>
-            </p>
-            <p>
-              <strong data-i18n="label.view"></strong>
-              <span data-i18n="q3.view"></span>
-            </p>
+        <div class="marquee">
+          <div class="marquee-track">
+            <span>Strategy</span><i></i> <span>Creativity</span><i></i>
+            <span>Media</span><i></i> <span>Performance</span><i></i>
+            <span>Strategy</span><i></i> <span>Creativity</span><i></i>
+            <span>Media</span><i></i> <span>Performance</span><i></i>
           </div>
         </div>
-      </article>
+      </section>
 
-      <article class="question-card reveal" id="question-04">
-        <div class="question-number">04</div>
-        <div>
-          <div class="question-category">#Communication funnel</div>
-          <h3 class="question-title" data-i18n="q4.title"></h3>
-          <div class="question-copy">
-            <p>
-              <strong data-i18n="label.challenge"></strong>
-              <span data-i18n="q4.challenge"></span>
-            </p>
-            <p>
-              <strong data-i18n="label.view"></strong>
-              <span data-i18n="q4.view"></span>
-            </p>
+      <section class="questions">
+        <div class="container">
+          <div class="questions-intro reveal">
+            <h2 data-i18n="brief.title"></h2>
+          </div>
+
+          <div class="questions-grid">
+            <article class="question-card reveal" id="question-01">
+              <div class="question-number">01</div>
+              <div>
+                <div class="question-category">#Audience</div>
+                <h3 class="question-title" data-i18n="q1.title"></h3>
+                <div class="question-copy">
+                  <p>
+                    <strong data-i18n="label.challenge"></strong>
+                    <span data-i18n="q1.challenge"></span>
+                  </p>
+                  <p>
+                    <strong data-i18n="label.view"></strong>
+                    <span data-i18n="q1.view"></span>
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="question-card reveal" id="question-02">
+              <div class="question-number">02</div>
+              <div>
+                <div class="question-category">#Positioning</div>
+                <h3 class="question-title" data-i18n="q2.title"></h3>
+                <div class="question-copy">
+                  <p>
+                    <strong data-i18n="label.challenge"></strong>
+                    <span data-i18n="q2.challenge"></span>
+                  </p>
+                  <p>
+                    <strong data-i18n="label.view"></strong>
+                    <span data-i18n="q2.view"></span>
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="question-card reveal" id="question-03">
+              <div class="question-number">03</div>
+              <div>
+                <div class="question-category">#Digital presence</div>
+                <h3 class="question-title" data-i18n="q3.title"></h3>
+                <div class="question-copy">
+                  <p>
+                    <strong data-i18n="label.challenge"></strong>
+                    <span data-i18n="q3.challenge"></span>
+                  </p>
+                  <p>
+                    <strong data-i18n="label.view"></strong>
+                    <span data-i18n="q3.view"></span>
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="question-card reveal" id="question-04">
+              <div class="question-number">04</div>
+              <div>
+                <div class="question-category">#Media</div>
+                <h3 class="question-title" data-i18n="q4.title"></h3>
+                <div class="question-copy">
+                  <p>
+                    <strong data-i18n="label.challenge"></strong>
+                    <span data-i18n="q4.challenge"></span>
+                  </p>
+                  <p>
+                    <strong data-i18n="label.view"></strong>
+                    <span data-i18n="q4.view"></span>
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="question-card reveal" id="question-05">
+              <div class="question-number">05</div>
+              <div>
+                <div class="question-category">#Performance</div>
+                <h3 class="question-title" data-i18n="q5.title"></h3>
+                <div class="question-copy">
+                  <p>
+                    <strong data-i18n="label.challenge"></strong>
+                    <span data-i18n="q5.challenge"></span>
+                  </p>
+                  <p>
+                    <strong data-i18n="label.view"></strong>
+                    <span data-i18n="q5.view"></span>
+                  </p>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
-      </article>
+      </section>
 
-      <article class="question-card reveal" id="question-05">
-        <div class="question-number">05</div>
-        <div>
-          <div class="question-category">#Performance</div>
-          <h3 class="question-title" data-i18n="q5.title"></h3>
-          <div class="question-copy">
-            <p>
-              <strong data-i18n="label.challenge"></strong>
-              <span data-i18n="q5.challenge"></span>
-            </p>
-            <p>
-              <strong data-i18n="label.view"></strong>
-              <span data-i18n="q5.view"></span>
-            </p>
+      <section class="next-step reveal" id="next">
+        <div class="container">
+          <div class="next-step-grid">
+            <div>
+              <p class="section-label" data-i18n="next.label"></p>
+              <h2>
+                <span data-i18n="next.title"></span>
+                <i data-i18n="next.help"></i>
+              </h2>
+            </div>
+            <div class="next-step-copy">
+              <p data-i18n="next.body"></p>
+              <p data-i18n="next.body2"></p>
+              <p class="next-step-note" data-i18n="next.note"></p>
+              <p class="next-step-note" data-i18n="next.note2"></p>
+              <div class="cta-actions">
+                <a
+                  class="btn btn-primary"
+                  href="#recommendations"
+                  data-i18n="next.cta"
+                ></a>
+              </div>
+            </div>
           </div>
         </div>
-      </article>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section class="next-step reveal" id="next">
-    <div class="container">
-      <div class="next-step-grid">
-        <div>
-          <p class="section-label" data-i18n="next.label"></p>
-          <h2>
-            <span data-i18n="next.title"></span>
-            <i data-i18n="next.help"></i>
-          </h2>
+      <section id="recommendations">
+        <div class="container">
+          <form class="contact-box contact-form" novalidate>
+            <p class="form-required-note" data-i18n="form.requiredNote"></p>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="reco-name" data-i18n="form.name"></label>
+                <input id="reco-name" name="name" type="text" required />
+              </div>
+              <div class="form-field">
+                <label for="reco-company" data-i18n="form.company"></label>
+                <input id="reco-company" name="company" type="text" required />
+              </div>
+              <div class="form-field">
+                <label for="reco-website" data-i18n="form.website"></label>
+                <input id="reco-website" name="website" type="text" />
+              </div>
+              <div class="form-field">
+                <label for="reco-email" data-i18n="form.email"></label>
+                <input id="reco-email" name="email" type="email" required />
+              </div>
+              <div class="form-field full">
+                <label data-i18n="form.priorities"></label>
+                <p class="reco-hint" data-i18n="form.prioritiesHint"></p>
+                <div class="reco-choices">
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="priorities"
+                      value="Finding customers" /><span
+                      data-i18n="form.p1"
+                    ></span
+                  ></label>
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="priorities"
+                      value="Finding partners" /><span
+                      data-i18n="form.p2"
+                    ></span
+                  ></label>
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="priorities"
+                      value="Building awareness" /><span
+                      data-i18n="form.p3"
+                    ></span
+                  ></label>
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="priorities"
+                      value="Improving our digital presence" /><span
+                      data-i18n="form.p4"
+                    ></span
+                  ></label>
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="priorities"
+                      value="Entering a new market" /><span
+                      data-i18n="form.p5"
+                    ></span
+                  ></label>
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="priorities"
+                      value="Improving marketing performance" /><span
+                      data-i18n="form.p6"
+                    ></span
+                  ></label>
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="priorities"
+                      value="Something else" /><span data-i18n="form.p7"></span
+                  ></label>
+                </div>
+              </div>
+              <div class="form-field full">
+                <label for="reco-more" data-i18n="form.more"></label>
+                <textarea id="reco-more" name="message"></textarea>
+              </div>
+            </div>
+            <p
+              class="form-status"
+              id="form-status"
+              role="status"
+              aria-live="polite"
+              hidden
+            ></p>
+            <div class="form-submit">
+              <button
+                class="btn btn-primary"
+                type="submit"
+                data-i18n="form.send"
+              ></button>
+            </div>
+          </form>
         </div>
-        <div class="next-step-copy">
-          <p data-i18n="next.body"></p>
+      </section>
+
+      <section class="direct reveal" id="direct">
+        <div class="container">
+          <h2 data-i18n="direct.title"></h2>
+          <p data-i18n="direct.subtitle"></p>
           <div class="cta-actions">
             <a
               class="btn btn-primary"
               id="email-us"
               href="mailto:dna@dnacreators.net?subject=GSIC%20Summit"
-              data-i18n="next.email"
+              data-i18n="direct.email"
             ></a>
             <a
               class="btn"
@@ -1514,226 +1807,373 @@
               href="https://wa.me/447984941683"
               target="_blank"
               rel="noopener noreferrer"
-              data-i18n="next.whatsapp"
+              data-i18n="direct.whatsapp"
             ></a>
           </div>
-          <p class="next-step-note" data-i18n="next.note"></p>
         </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <a href="https://dnacreators.net/" class="footer-brand">
+          <img
+            src="https://dnacreators.net/wp-content/uploads/email-logo-white.png"
+            alt="DNA Creators"
+          />
+        </a>
+        <span> Strategy / Creativity / Media / Performance </span>
+        <span> © DNA Creators </span>
       </div>
-      <p class="next-step-line" data-i18n="statement.title"></p>
-    </div>
-  </section>
+    </footer>
 
-</main>
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible")
+            }
+          })
+        },
+        {
+          threshold: 0.12,
+        },
+      )
 
-<footer>
-  <div class="container footer-inner">
-    <a href="https://dnacreators.net/" class="footer-brand">
-      <img src="https://dnacreators.net/wp-content/uploads/email-logo-white.png" alt="DNA Creators" />
-    </a>
-    <span>
-      Strategy / Creativity / Media / Performance
-    </span>
-    <span>
-      © DNA Creators
-    </span>
-  </div>
-</footer>
+      document.querySelectorAll(".reveal").forEach((el) => {
+        observer.observe(el)
+      })
 
+      const i18n = {
+        en: {
+          "nav.talk": "Let's talk",
+          "hero.title": "Is your marketing as smart",
+          "hero.change": "as your tech?",
+          "hero.intro":
+            "You're nailing the innovation part. But is your marketing working just as hard? Our <strong>5 questions</strong> help you take a fresh, honest look at how your business is communicating, to check if you're reaching the right people and turning attention into opportunities and measurable growth.",
+          "hero.cta": "Get started",
+          "pass.live": "Live at the summit",
+          "stats.event": "Event",
+          "stats.city": "City",
+          "stats.dates": "Dates",
+          "brief.label": "The brief",
+          "brief.title": "Five questions. Five opportunities.",
+          "label.challenge": "The challenge",
+          "label.view": "Our view",
+          "q.next": "Next question",
+          "v2.label": "Version 02",
+          "v2.title": "One question at a time.",
+          "v3.label": "Version 03",
+          "v3.title": "Walk down the line.",
+          "v4.label": "Version 04",
+          "v4.title": "Swipe the five.",
+          "q1.title": "Are you reaching the right people, or just more people?",
+          "q1.challenge":
+            "Reach can look like success even when you're missing those who matter.",
+          "q1.view":
+            "Understand who your audiences really are: their potential, needs, behaviours and what moves them to act.",
+          "q2.title": "Why should people care about what you offer?",
+          "q2.challenge":
+            "Tech alone isn't enough. People want to know why it matters to them.",
+          "q2.view":
+            "Turn what makes you different into a compelling reason for customers, partners and decision-makers to choose you.",
+          "q3.title":
+            "Your business is brilliant. Do your comms do it justice?",
+          "q3.challenge":
+            "If people don't quickly get excited about what you do, they won't act on it.",
+          "q3.view":
+            "Make every digital touchpoint clearer, more engaging and easier to act on, from your website and content to search.",
+          "q4.title": "Are you showing up where it makes a difference?",
+          "q4.challenge":
+            "Being everywhere isn't a media strategy. It's expensive noise.",
+          "q4.view":
+            "Know where your audiences are, then choose the channels, environments and opportunities that make every investment count.",
+          "q5.title": "Is your marketing creating measurable business growth?",
+          "q5.challenge":
+            "Clicks and engagement can feel good. But they're not the end goal.",
+          "q5.view":
+            "Focus on what moves the business: qualified leads, conversions and commercial outcomes. Then measure, learn and optimise.",
+          "next.label": "Next step",
+          "next.title": "Did any of these questions get you thinking?",
+          "next.help": "Get 3 marketing tips. They're on us.",
+          "next.body":
+            "Tell us what matters to your business and we'll do the digging.",
+          "next.body2":
+            "Then, we'll share 3 FREE, bespoke Digital & Media recommendations.",
+          "next.note": "No lengthy questionnaire. No generic report.",
+          "next.note2": "Just three useful recommendations for your business.",
+          "next.cta": "Get my 3 free recommendations",
+          "direct.title": "Contact us directly",
+          "direct.subtitle": "If you'd rather talk straight away, email or WhatsApp us.",
+          "direct.email": "Email us",
+          "direct.whatsapp": "WhatsApp us",
+          "next.email": "Email us",
+          "next.whatsapp": "WhatsApp us",
+          "next.waText": "Hi DNA, I saw your questions at GSIC Summit.",
+          "statement.title": "Smart technology needs smart marketing.",
+          "statement.body":
+            "DNA brings strategy, creativity, media and performance together to help ambitious businesses turn attention into measurable growth.",
+          "about.label": "About DNA",
+          "about.title": "Your marketing allies, minus the corporate pretence.",
+          "about.body":
+            "DNA Creators is a global collective of experienced marketing specialists helping businesses build stronger brands, reach the right audiences and create sustainable growth.",
+          "cta.title": "Want to continue the conversation?",
+          "cta.book": "Book a chat",
+          "cta.linkedin": "Connect on LinkedIn",
+          "form.name": "Your name",
+          "form.company": "Company",
+          "form.website": "Website (Optional)",
+          "form.requiredNote": "Fields marked * are required.",
+          "form.missing": "Please fill in your name, company and email.",
+          "form.emailInvalid": "Please enter a valid email address.",
+          "form.email": "Email",
+          "form.priorities": "What matters most to your business right now?",
+          "form.prioritiesHint": "Choose any that apply.",
+          "form.p1": "Finding customers",
+          "form.p2": "Finding partners",
+          "form.p3": "Building awareness",
+          "form.p4": "Improving our digital presence",
+          "form.p5": "Entering a new market",
+          "form.p6": "Improving marketing performance",
+          "form.p7": "Something else",
+          "form.more": "Anything else we should know? (Optional)",
+          "form.send": "Send me my recommendations",
+          "form.ok": "Thanks. We'll send your recommendations.",
+          "form.err": "Something went wrong. Please try again.",
+        },
+        es: {
+          "nav.talk": "Hablemos",
+          "hero.title": "¿Tu marketing es tan inteligente",
+          "hero.change": "como tu tecnología?",
+          "hero.intro":
+            "La innovación la tienes resuelta. ¿Tu marketing trabaja igual de duro? Nuestras <strong>5 preguntas</strong> te ayudan a mirar con honestidad cómo comunica tu negocio, y a comprobar si llegas a las personas adecuadas y conviertes la atención en oportunidades y crecimiento medible.",
+          "hero.cta": "Empezar",
+          "pass.live": "En el summit",
+          "stats.event": "Evento",
+          "stats.city": "Ciudad",
+          "stats.dates": "Fechas",
+          "brief.label": "El brief",
+          "brief.title": "Cinco preguntas. Cinco oportunidades.",
+          "label.challenge": "El reto",
+          "label.view": "Nuestra visión",
+          "q.next": "Siguiente pregunta",
+          "v2.label": "Versión 02",
+          "v2.title": "Una pregunta a la vez.",
+          "v3.label": "Versión 03",
+          "v3.title": "Baja por la línea.",
+          "v4.label": "Versión 04",
+          "v4.title": "Desliza las cinco.",
+          "q1.title":
+            "¿Llegas a las personas adecuadas, o solo a más personas?",
+          "q1.challenge":
+            "El alcance puede parecer un éxito aunque te estés perdiendo a quienes importan.",
+          "q1.view":
+            "Entiende quién es tu audiencia de verdad: su potencial, necesidades, comportamientos y qué les mueve a actuar.",
+          "q2.title": "¿Por qué debería importarles lo que ofreces?",
+          "q2.challenge":
+            "La tecnología sola no basta. La gente quiere saber por qué les importa a ellos.",
+          "q2.view":
+            "Convierte lo que te hace diferente en una razón clara para que clientes, partners y decisores te elijan.",
+          "q3.title":
+            "Tu negocio es brillante. ¿Tu comunicación le hace justicia?",
+          "q3.challenge":
+            "Si la gente no se entusiasma rápido con lo que haces, no actuará.",
+          "q3.view":
+            "Haz cada punto de contacto digital más claro, más atractivo y más fácil de usar, desde la web y el contenido hasta la búsqueda.",
+          "q4.title": "¿Apareces donde de verdad marca la diferencia?",
+          "q4.challenge":
+            "Estar en todas partes no es una estrategia de medios. Es ruido caro.",
+          "q4.view":
+            "Sabe dónde está tu audiencia y elige los canales, entornos y oportunidades que hacen que cada inversión cuente.",
+          "q5.title":
+            "¿Tu marketing genera un crecimiento medible del negocio?",
+          "q5.challenge":
+            "Los clics y el engagement pueden sentar bien. No son el objetivo.",
+          "q5.view":
+            "Céntrate en lo que mueve el negocio: leads cualificados, conversiones y resultados comerciales. Luego mide, aprende y optimiza.",
+          "next.label": "Siguiente paso",
+          "next.title": "¿Alguna de estas preguntas te ha hecho pensar?",
+          "next.help": "Te damos 3 consejos de marketing. Invitan ellos.",
+          "next.body":
+            "Cuéntanos qué le importa a tu negocio y nosotros investigamos.",
+          "next.body2":
+            "Después compartimos 3 recomendaciones FREE y a medida de Digital y Media.",
+          "next.note": "Sin cuestionario largo. Sin informe genérico.",
+          "next.note2": "Solo tres recomendaciones útiles para tu negocio.",
+          "next.cta": "Quiero mis 3 recomendaciones gratis",
+          "direct.title": "Contáctanos directamente",
+          "direct.subtitle": "Si prefieres hablar ahora, escríbenos por email o WhatsApp.",
+          "direct.email": "Escríbenos",
+          "direct.whatsapp": "WhatsApp",
+          "next.email": "Escríbenos",
+          "next.whatsapp": "WhatsApp",
+          "next.waText":
+            "Hola DNA, he visto vuestras preguntas en el GSIC Summit.",
+          "statement.title":
+            "La tecnología inteligente necesita marketing inteligente.",
+          "statement.body":
+            "DNA une estrategia, creatividad, medios y performance para ayudar a negocios ambiciosos a convertir atención en crecimiento medible.",
+          "about.label": "Sobre DNA",
+          "about.title": "Tus aliados de marketing, sin pose corporativa.",
+          "about.body":
+            "DNA Creators es un colectivo global de especialistas en marketing que ayudan a las empresas a construir marcas más fuertes, llegar a las audiencias correctas y crear crecimiento sostenible.",
+          "cta.title": "¿Seguimos la conversación?",
+          "cta.book": "Reserva un chat",
+          "cta.linkedin": "Conecta en LinkedIn",
+          "form.name": "Tu nombre",
+          "form.company": "Empresa",
+          "form.website": "Web (opcional)",
+          "form.requiredNote": "Los campos marcados con * son obligatorios.",
+          "form.missing": "Completa tu nombre, empresa y email.",
+          "form.emailInvalid": "Introduce un email válido.",
+          "form.email": "Email",
+          "form.priorities": "¿Qué es lo más importante para tu negocio ahora?",
+          "form.prioritiesHint": "Elige las que apliquen.",
+          "form.p1": "Encontrar clientes",
+          "form.p2": "Encontrar partners",
+          "form.p3": "Construir notoriedad",
+          "form.p4": "Mejorar nuestra presencia digital",
+          "form.p5": "Entrar en un mercado nuevo",
+          "form.p6": "Mejorar el rendimiento del marketing",
+          "form.p7": "Otra cosa",
+          "form.more": "¿Algo más que debamos saber? (Opcional)",
+          "form.send": "Enviadme mis recomendaciones",
+          "form.ok": "Gracias. Te enviaremos las recomendaciones.",
+          "form.err": "Algo ha fallado. Inténtalo de nuevo.",
+        },
+      }
 
-<script>
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
+      const params = new URLSearchParams(window.location.search)
+      let lang = "en"
+      if (!i18n[lang]) lang = "en"
+
+      function applyLang(next) {
+        lang = next
+        localStorage.setItem("lang", next)
+        document.documentElement.lang = next
+        const copy = i18n[next]
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const value = copy[el.dataset.i18n]
+          if (value) el.textContent = value
+        })
+        document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+          const value = copy[el.dataset.i18nHtml]
+          if (value) el.innerHTML = value
+        })
+        document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+          const value = copy[el.dataset.i18nPlaceholder]
+          if (value) el.placeholder = value
+        })
+        document.querySelectorAll(".lang-switch button").forEach((btn) => {
+          btn.classList.toggle("is-active", btn.dataset.lang === next)
+        })
+        const email = document.getElementById("email-us")
+        const whatsapp = document.getElementById("whatsapp-us")
+        if (email) {
+          email.href =
+            "mailto:dna@dnacreators.net?subject=" +
+            encodeURIComponent("GSIC Summit")
         }
-      });
-    },
-    {
-      threshold: 0.12
-    }
-  );
+        if (whatsapp) {
+          whatsapp.href =
+            "https://wa.me/447984941683?text=" +
+            encodeURIComponent(copy["next.waText"])
+        }
+      }
 
-  document.querySelectorAll(".reveal").forEach(el => {
-    observer.observe(el);
-  });
+      applyLang(lang)
 
-  const i18n = {
-    en: {
-      "nav.talk": "Let's talk",
-      "hero.title": "Your technology is smarter than your marketing.",
-      "hero.change": "Let's change that.",
-      "hero.intro": "Five questions for ambitious <strong>sports-tech businesses</strong> that want to turn innovation into attention, customers and measurable growth.",
-      "hero.cta": "Start with question 01",
-      "pass.live": "Live at the summit",
-      "stats.event": "Event",
-      "stats.city": "City",
-      "stats.dates": "Dates",
-      "brief.label": "The brief",
-      "brief.title": "Five questions. Five answers.",
-      "label.challenge": "The challenge",
-      "label.view": "Our view",
-      "q.next": "Next question",
-      "v2.label": "Version 02",
-      "v2.title": "One question at a time.",
-      "v3.label": "Version 03",
-      "v3.title": "Walk down the line.",
-      "v4.label": "Version 04",
-      "v4.title": "Swipe the five.",
-      "q1.title": "Do you know who's buying, or just who's liking?",
-      "q1.challenge": "Reach can look like success without reaching people who actually buy.",
-      "q1.view": "Start with who matters, and what moves them to a decision.",
-      "q2.title": "Are you selling technology, or giving people a reason to care?",
-      "q2.challenge": "Features aren't a reason to care. People want to know why it matters to them.",
-      "q2.view": "Positioning turns complexity into a reason to choose you.",
-      "q3.title": "Are you everywhere, or where it actually matters?",
-      "q3.challenge": "Being everywhere isn't a media strategy. It's expensive noise.",
-      "q3.view": "Invest where your audience actually pays attention.",
-      "q4.title": "You got their attention. Now what?",
-      "q4.challenge": "Attention without a next step rarely becomes growth.",
-      "q4.view": "Build one journey from awareness to conversion.",
-      "q5.title": "Your dashboard looks great. But is your business growing?",
-      "q5.challenge": "Clicks and engagement are useful. They're not the end goal.",
-      "q5.view": "Connect activity to leads, cost and revenue.",
-      "next.label": "Next step",
-      "next.title": "If one of these questions rings a bell, get in touch.",
-      "next.help": "We can help!",
-      "next.body": "Tell us which question hit, and your site. We'll reply with the one fix worth making, by email or WhatsApp.",
-      "next.email": "Email us",
-      "next.whatsapp": "WhatsApp us",
-      "next.note": "No sales deck. No call unless you want one.",
-      "next.waText": "Hi DNA, I saw your questions at GSIC Summit.",
-      "statement.title": "Smart technology needs smart marketing.",
-      "statement.body": "DNA brings strategy, creativity, media and performance together to help ambitious businesses turn attention into measurable growth.",
-      "about.label": "About DNA",
-      "about.title": "Your marketing allies, minus the corporate pretence.",
-      "about.body": "DNA Creators is a global collective of experienced marketing specialists helping businesses build stronger brands, reach the right audiences and create sustainable growth.",
-      "cta.title": "Want to continue the conversation?",
-      "cta.book": "Book a chat",
-      "cta.linkedin": "Connect on LinkedIn",
-      "form.name": "Name",
-      "form.namePh": "What should we call you?",
-      "form.email": "Email",
-      "form.company": "Company",
-      "form.companyPh": "Your company",
-      "form.message": "Tell us what's on your mind",
-      "form.messagePh": "Technology, growth, marketing... let's talk.",
-      "form.send": "Send message",
-      "form.ok": "Thanks. We will get back to you.",
-      "form.err": "Something went wrong. Please try again."
-    },
-    es: {
-      "nav.talk": "Hablemos",
-      "hero.title": "Tu tecnología es más inteligente que tu marketing.",
-      "hero.change": "Cambiemos eso.",
-      "hero.intro": "Cinco preguntas para <strong>empresas de sports-tech</strong> que quieren convertir innovación en atención, clientes y crecimiento medible.",
-      "hero.cta": "Empieza por la pregunta 01",
-      "pass.live": "En el summit",
-      "stats.event": "Evento",
-      "stats.city": "Ciudad",
-      "stats.dates": "Fechas",
-      "brief.label": "El brief",
-      "brief.title": "Cinco preguntas. Cinco respuestas.",
-      "label.challenge": "El reto",
-      "label.view": "Nuestra visión",
-      "q.next": "Siguiente pregunta",
-      "v2.label": "Versión 02",
-      "v2.title": "Una pregunta a la vez.",
-      "v3.label": "Versión 03",
-      "v3.title": "Baja por la línea.",
-      "v4.label": "Versión 04",
-      "v4.title": "Desliza las cinco.",
-      "q1.title": "¿Sabes quién compra, o solo quién da like?",
-      "q1.challenge": "El alcance puede parecer un éxito sin llegar a quien realmente compra.",
-      "q1.view": "Empieza por quién importa, y qué les lleva a decidir.",
-      "q2.title": "¿Vendes tecnología, o das una razón para importarles?",
-      "q2.challenge": "Las features no son una razón para importar. La gente quiere saber por qué les importa a ellos.",
-      "q2.view": "El posicionamiento convierte lo complejo en una razón para elegirte.",
-      "q3.title": "¿Estás en todas partes, o donde de verdad importa?",
-      "q3.challenge": "Estar en todas partes no es una estrategia de medios. Es ruido caro.",
-      "q3.view": "Invierte donde tu audiencia ya presta atención.",
-      "q4.title": "Ya tienes su atención. ¿Y ahora qué?",
-      "q4.challenge": "La atención sin un siguiente paso rara vez se convierte en crecimiento.",
-      "q4.view": "Un solo recorrido, de la primera mirada a la conversión.",
-      "q5.title": "Tu dashboard se ve genial. ¿Pero crece el negocio?",
-      "q5.challenge": "Los clics y el engagement sirven. No son el objetivo.",
-      "q5.view": "Conecta la actividad con leads, coste e ingresos.",
-      "next.label": "Siguiente paso",
-      "next.title": "Si alguna de estas preguntas te suena, escríbenos.",
-      "next.help": "¡Podemos ayudar!",
-      "next.body": "Dinos qué pregunta te ha tocado, y tu web. Te respondemos con el único cambio que merece la pena, por email o WhatsApp.",
-      "next.email": "Escríbenos",
-      "next.whatsapp": "WhatsApp",
-      "next.note": "Sin presentación comercial. Sin llamada, salvo que la quieras.",
-      "next.waText": "Hola DNA, he visto vuestras preguntas en el GSIC Summit.",
-      "statement.title": "La tecnología inteligente necesita marketing inteligente.",
-      "statement.body": "DNA une estrategia, creatividad, medios y performance para ayudar a negocios ambiciosos a convertir atención en crecimiento medible.",
-      "about.label": "Sobre DNA",
-      "about.title": "Tus aliados de marketing, sin pose corporativa.",
-      "about.body": "DNA Creators es un colectivo global de especialistas en marketing que ayudan a las empresas a construir marcas más fuertes, llegar a las audiencias correctas y crear crecimiento sostenible.",
-      "cta.title": "¿Seguimos la conversación?",
-      "cta.book": "Reserva un chat",
-      "cta.linkedin": "Conecta en LinkedIn",
-      "form.name": "Nombre",
-      "form.namePh": "¿Cómo te llamamos?",
-      "form.email": "Email",
-      "form.company": "Empresa",
-      "form.companyPh": "Tu empresa",
-      "form.message": "Cuéntanos qué tienes en mente",
-      "form.messagePh": "Tecnología, crecimiento, marketing... hablemos.",
-      "form.send": "Enviar mensaje",
-      "form.ok": "Gracias. Te escribimos pronto.",
-      "form.err": "Algo ha fallado. Inténtalo de nuevo."
-    }
-  };
+      const form = document.querySelector(".contact-form")
+      if (form) {
+        const status = form.querySelector(".form-status")
+        const submit = form.querySelector("button[type='submit']")
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-  const params = new URLSearchParams(window.location.search);
-  let lang = "en";
-  if (!i18n[lang]) lang = "en";
+        function showStatus(kind, message) {
+          status.hidden = false
+          status.classList.remove("is-error", "is-success")
+          status.classList.add(kind)
+          status.textContent = message
+          status.scrollIntoView({ block: "nearest" })
+        }
 
-  function applyLang(next) {
-    lang = next;
-    localStorage.setItem("lang", next);
-    document.documentElement.lang = next;
-    const copy = i18n[next];
-    document.querySelectorAll("[data-i18n]").forEach((el) => {
-      const value = copy[el.dataset.i18n];
-      if (value) el.textContent = value;
-    });
-    document.querySelectorAll("[data-i18n-html]").forEach((el) => {
-      const value = copy[el.dataset.i18nHtml];
-      if (value) el.innerHTML = value;
-    });
-    document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
-      const value = copy[el.dataset.i18nPlaceholder];
-      if (value) el.placeholder = value;
-    });
-    document.querySelectorAll(".lang-switch button").forEach((btn) => {
-      btn.classList.toggle("is-active", btn.dataset.lang === next);
-    });
-    const email = document.getElementById("email-us");
-    const whatsapp = document.getElementById("whatsapp-us");
-    if (email) {
-      email.href = "mailto:dna@dnacreators.net?subject=" + encodeURIComponent("GSIC Summit");
-    }
-    if (whatsapp) {
-      whatsapp.href = "https://wa.me/447984941683?text=" + encodeURIComponent(copy["next.waText"]);
-    }
-  }
+        function clearInvalid() {
+          form.querySelectorAll(".is-invalid").forEach((field) => {
+            field.classList.remove("is-invalid")
+            const control = field.querySelector("input, textarea")
+            if (control) control.removeAttribute("aria-invalid")
+          })
+        }
 
-  applyLang(lang);
+        form.addEventListener("input", (event) => {
+          const field = event.target.closest(".form-field")
+          if (!field || !field.classList.contains("is-invalid")) return
+          field.classList.remove("is-invalid")
+          event.target.removeAttribute("aria-invalid")
+        })
 
-  document.querySelectorAll(".lang-switch button").forEach((btn) => {
-    btn.addEventListener("click", () => applyLang(btn.dataset.lang));
-  });
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault()
+          const copy = i18n[lang]
+          status.hidden = true
+          status.classList.remove("is-error", "is-success")
+          clearInvalid()
 
-  if (
-    params.get("utm_medium") === "qr"
-  ) {
-    console.log("QR visit detected");
-  }
-</script>
+          let missing = false
+          let badEmail = false
+          let firstInvalid = null
+          form.querySelectorAll("input[required], textarea[required]").forEach((input) => {
+            const value = input.value.trim()
+            const invalid =
+              !value || (input.type === "email" && !emailPattern.test(value))
+            if (!invalid) return
+            if (!value) missing = true
+            else badEmail = true
+            const field = input.closest(".form-field")
+            if (field) field.classList.add("is-invalid")
+            input.setAttribute("aria-invalid", "true")
+            if (!firstInvalid) firstInvalid = input
+          })
 
-</body>
+          if (firstInvalid) {
+            showStatus(
+              "is-error",
+              missing ? copy["form.missing"] : copy["form.emailInvalid"],
+            )
+            firstInvalid.focus()
+            return
+          }
+
+          submit.disabled = true
+          const data = Object.fromEntries(new FormData(form).entries())
+          data.priorities = Array.from(
+            form.querySelectorAll("input[name='priorities']:checked"),
+          ).map((item) => item.value)
+          try {
+            const response = await fetch("/api/contact", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(data),
+            })
+            if (!response.ok) throw new Error()
+            form.reset()
+            showStatus("is-success", copy["form.ok"])
+          } catch {
+            showStatus("is-error", copy["form.err"])
+          } finally {
+            submit.disabled = false
+          }
+        })
+      }
+
+      document.querySelectorAll(".lang-switch button").forEach((btn) => {
+        btn.addEventListener("click", () => applyLang(btn.dataset.lang))
+      })
+
+      if (params.get("utm_medium") === "qr") {
+        console.log("QR visit detected")
+      }
+    </script>
+  </body>
 </html>

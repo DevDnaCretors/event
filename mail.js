@@ -20,9 +20,13 @@ async function sendContact(body) {
   const name = clean(body.name).slice(0, 120);
   const email = clean(body.email).slice(0, 200);
   const company = clean(body.company).slice(0, 160);
+  const website = clean(body.website).slice(0, 300);
   const message = clean(body.message);
+  const priorities = Array.isArray(body.priorities)
+    ? body.priorities.map((item) => clean(item)).filter(Boolean)
+    : [];
 
-  if (!name || !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  if (!name || !company || !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return { ok: false, status: 400 };
   }
 
@@ -32,10 +36,12 @@ async function sendContact(body) {
     "",
     `Name: ${name}`,
     `Email: ${email}`,
-    company ? `Company: ${company}` : "",
+    `Company: ${company}`,
+    `Website: ${website || "(Not provided)"}`,
+    `Priorities: ${priorities.length ? priorities.join(", ") : "(None selected)"}`,
     "",
-    message || "(No message)",
-  ].filter(Boolean);
+    message || "(No extra note)",
+  ];
 
   await transporter().sendMail({
     from: process.env.SMTP_FROM || process.env.SMTP_USER,
