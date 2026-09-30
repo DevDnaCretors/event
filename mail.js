@@ -45,7 +45,7 @@ async function sendContact(body) {
 
   await transporter().sendMail({
     from: process.env.SMTP_FROM || process.env.SMTP_USER,
-    to: process.env.SMTP_TO || process.env.SMTP_USER,
+    to: "dna@dnacreators.net",
     replyTo: email,
     subject: `${eventName} / ${name}`,
     text: lines.join("\n"),
