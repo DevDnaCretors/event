@@ -1840,6 +1840,31 @@
     </footer>
 
     <script>
+      const GA_MEASUREMENT_ID = ""
+
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        window.dataLayer.push(arguments)
+      }
+      window.gtag = gtag
+
+      if (GA_MEASUREMENT_ID) {
+        const gaScript = document.createElement("script")
+        gaScript.async = true
+        gaScript.src =
+          "https://www.googletagmanager.com/gtag/js?id=" +
+          encodeURIComponent(GA_MEASUREMENT_ID)
+        document.head.appendChild(gaScript)
+        gtag("js", new Date())
+        gtag("config", GA_MEASUREMENT_ID)
+      }
+
+      function trackFormConversion() {
+        gtag("event", "generate_lead", {
+          form_id: "recommendations",
+        })
+      }
+
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -2173,6 +2198,7 @@
             if (!response.ok) throw new Error()
             form.reset()
             showStatus("is-success", copy["form.ok"])
+            trackFormConversion()
           } catch {
             showStatus("is-error", copy["form.err"])
           } finally {
