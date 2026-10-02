@@ -333,7 +333,12 @@
         font-weight: 400;
         line-height: 1em;
         letter-spacing: -1px;
-        max-width: 14ch;
+        max-width: none;
+      }
+
+      .hero-title span,
+      .hero-title i {
+        display: block;
       }
 
       .hero-title i {
@@ -578,10 +583,14 @@
         font-style: italic;
         font-weight: 400;
         font-size: clamp(2.2rem, 4vw, 3.25rem);
-        line-height: 0.95;
+        line-height: 1.05;
         letter-spacing: -1.5px;
         color: var(--ink);
         margin-top: 10px;
+      }
+
+      .questions-intro h2 span {
+        display: block;
       }
 
       .questions-grid {
@@ -1562,7 +1571,10 @@
       <section class="questions">
         <div class="container">
           <div class="questions-intro reveal">
-            <h2 data-i18n="brief.title"></h2>
+            <h2>
+              <span data-i18n="brief.title"></span>
+              <span data-i18n="brief.title2"></span>
+            </h2>
           </div>
 
           <div class="questions-grid">
@@ -1848,8 +1860,8 @@
       const i18n = {
         en: {
           "nav.talk": "Let's talk",
-          "hero.title": "Is your marketing as smart",
-          "hero.change": "as your tech?",
+          "hero.title": "Is your marketing",
+          "hero.change": "as smart as your tech?",
           "hero.intro":
             "You're nailing the innovation part. But is your marketing working just as hard? Our <strong>5 questions</strong> help you take a fresh, honest look at how your business is communicating, to check if you're reaching the right people and turning attention into opportunities and measurable growth.",
           "hero.cta": "Get started",
@@ -1858,7 +1870,8 @@
           "stats.city": "City",
           "stats.dates": "Dates",
           "brief.label": "The brief",
-          "brief.title": "Five questions. Five opportunities.",
+          "brief.title": "Five questions.",
+          "brief.title2": "Five opportunities.",
           "label.challenge": "The challenge",
           "label.view": "Our view",
           "q.next": "Next question",
@@ -1944,8 +1957,8 @@
         },
         es: {
           "nav.talk": "Hablemos",
-          "hero.title": "¿Tu marketing es tan inteligente",
-          "hero.change": "como tu tecnología?",
+          "hero.title": "¿Tu marketing",
+          "hero.change": "es tan inteligente como tu tecnología?",
           "hero.intro":
             "La innovación la tienes resuelta. ¿Tu marketing trabaja igual de duro? Nuestras <strong>5 preguntas</strong> te ayudan a mirar con honestidad cómo comunica tu negocio, y a comprobar si llegas a las personas adecuadas y conviertes la atención en oportunidades y crecimiento medible.",
           "hero.cta": "Empezar",
@@ -1954,7 +1967,8 @@
           "stats.city": "Ciudad",
           "stats.dates": "Fechas",
           "brief.label": "El brief",
-          "brief.title": "Cinco preguntas. Cinco oportunidades.",
+          "brief.title": "Cinco preguntas.",
+          "brief.title2": "Cinco oportunidades.",
           "label.challenge": "El reto",
           "label.view": "Nuestra visión",
           "q.next": "Siguiente pregunta",
